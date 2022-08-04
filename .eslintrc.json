@@ -1,0 +1,4 @@
+{
+    "extends": ["@arfreelance/eslint-config"],
+    "plugins": ["@arfreelance/eslint-plugin"]
+}

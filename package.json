@@ -9,9 +9,14 @@
     "repository": "https://github.com/conobanegas/arfreelance.git",
     "bugs": "https://github.com/conobanegas/arfreelance/issues",
     "scripts": {
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",
+        "test:prettier": "prettier --color --ignore-unknown --loglevel error --no-error-on-unmatched-pattern --write **/*.{css,js,json,md,scss}",
+        "test": "run-s test:prettier test:eslint"
     },
     "devDependencies": {
+        "@arfreelance/eslint-config": "^0.1.0",
+        "@arfreelance/eslint-plugin": "^0.1.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",
@@ -19,6 +24,7 @@
         "husky": "^8.0.1",
         "lerna": "^5.3.0",
         "lint-staged": "^13.0.3",
+        "npm-run-all": "^4.1.5",
         "prettier": "^2.7.1"
     },
     "config": {
@@ -32,6 +38,10 @@
         ]
     },
     "lint-staged": {
-        "*.{css,js,json,scss,md}": "prettier --color --loglevel error --write"
+        "*.{css,json,scss,md}": "prettier --color --loglevel error --write",
+        "*.js": [
+            "prettier --color --loglevel error --write",
+            "eslint --color --exit-on-fatal-error --fix"
+        ]
     }
 }
