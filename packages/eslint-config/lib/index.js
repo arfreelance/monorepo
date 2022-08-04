@@ -1,10 +1,10 @@
-// @argentinafreelance/eslint-config
+// @arfreelance/eslint-config
 
 const _ = require("lodash");
 const standard = require("eslint-config-standard");
 const prettier = require("eslint-config-prettier");
 
-// Plugins
+// Prefix
 // -----------------------------------------------------------------------------
 
 const prefix = "@arfreelance/";
