@@ -1,0 +1,21 @@
+{
+    "packages": ["packages/*"],
+    "version": "0.0.0",
+    "useNx": false,
+    "command": {
+        "bootstrap": {
+            "hoist": true
+        },
+        "create": {
+            "access": "public",
+            "description": "Package in experimental stage. Do not use for production.",
+            "license": "ISC"
+        },
+        "publish": {
+            "allowBranch": "main",
+            "changelogPreset": "angular",
+            "conventionalCommits": true,
+            "message": "chore(release): publish %v"
+        }
+    }
+}

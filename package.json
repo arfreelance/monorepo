@@ -1,0 +1,37 @@
+{
+    "name": "arfreelance",
+    "version": "0.0.0",
+    "private": true,
+    "license": "ISC",
+    "author": "Lucas Banegas <conobanegas@gmail.com>",
+    "description": "Package in experimental stage. Do not use for production.",
+    "homepage": "https://github.com/conobanegas/arfreelance#readme",
+    "repository": "https://github.com/conobanegas/arfreelance.git",
+    "bugs": "https://github.com/conobanegas/arfreelance/issues",
+    "scripts": {
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
+        "commitizen": "^4.2.5",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "^8.0.1",
+        "lerna": "^5.3.0",
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "*.{css,js,json,scss,md}": "prettier --color --loglevel error --write"
+    }
+}
