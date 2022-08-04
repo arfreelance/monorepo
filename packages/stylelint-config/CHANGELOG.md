@@ -5,10 +5,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.2.0](https://github.com/conobanegas/arfreelance/compare/v0.1.0...v0.2.0) (2022-08-04)
 
-**Note:** Version bump only for package @arfreelance/eslint-config
-
-# 0.1.0 (2022-08-04)
-
 ### Features
 
--   **eslint-config:** initial commit ([01ea562](https://github.com/conobanegas/arfreelance/commit/01ea562ceb97ecd4054ea3cd8ca14a168be72589))
+-   **stylelint-config:** initial commit ([2a19f09](https://github.com/conobanegas/arfreelance/commit/2a19f093147e678ee31c6450582ce4b631b9cd6e))
