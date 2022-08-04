@@ -12,11 +12,15 @@
         "prepare": "husky install",
         "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",
         "test:prettier": "prettier --color --ignore-unknown --loglevel error --no-error-on-unmatched-pattern --write **/*.{css,js,json,md,scss}",
-        "test": "run-s test:prettier test:eslint"
+        "test:stylelint": "stylelint --allow-empty-input --color --fix **/*.{css,scss}",
+        "test:parallel": "run-p test:eslint test:stylelint",
+        "test": "run-s test:prettier test:parallel"
     },
     "devDependencies": {
         "@arfreelance/eslint-config": "^0.1.0",
         "@arfreelance/eslint-plugin": "^0.1.0",
+        "@arfreelance/stylelint-config": "^0.2.0",
+        "@arfreelance/stylelint-plugin": "^0.2.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",
@@ -25,7 +29,8 @@
         "lerna": "^5.3.0",
         "lint-staged": "^13.0.3",
         "npm-run-all": "^4.1.5",
-        "prettier": "^2.7.1"
+        "prettier": "^2.7.1",
+        "stylelint": "^14.9.1"
     },
     "config": {
         "commitizen": {
@@ -38,10 +43,16 @@
         ]
     },
     "lint-staged": {
-        "*.{css,json,scss,md}": "prettier --color --loglevel error --write",
+        "*.{css,scss}": [
+            "prettier --color --loglevel error --write",
+            "stylelint --allow-empty-input --color --fix"
+        ],
         "*.js": [
             "prettier --color --loglevel error --write",
             "eslint --color --exit-on-fatal-error --fix"
+        ],
+        "*.{json,md}": [
+            "prettier --color --loglevel error --write"
         ]
     }
 }
