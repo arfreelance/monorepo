@@ -1,0 +1,23 @@
+{
+    "name": "@arfreelance/eslint-plugin",
+    "version": "0.0.0",
+    "license": "ISC",
+    "author": "Lucas Banegas <conobanegas@gmail.com>",
+    "description": "Package in experimental stage. Do not use for production.",
+    "homepage": "https://github.com/conobanegas/arfreelance/tree/main/packages/eslint-plugin#readme",
+    "repository": "https://github.com/conobanegas/arfreelance.git",
+    "bugs": "https://github.com/conobanegas/arfreelance/issues",
+    "main": "lib/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.3",
+        "eslint-plugin-promise": "^6.0.0",
+        "lodash": "^4.17.21"
+    },
+    "peerDependencies": {
+        "eslint": "^8.19.0"
+    }
+}
