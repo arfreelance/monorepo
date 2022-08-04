@@ -1,0 +1,25 @@
+{
+    "name": "@arfreelance/eslint-config",
+    "version": "0.0.0",
+    "license": "ISC",
+    "author": "Lucas Banegas <conobanegas@gmail.com>",
+    "description": "Package in experimental stage. Do not use for production.",
+    "homepage": "https://github.com/conobanegas/arfreelance/tree/main/packages/eslint-config#readme",
+    "repository": "https://github.com/conobanegas/arfreelance.git",
+    "bugs": "https://github.com/conobanegas/arfreelance/issues",
+    "main": "lib/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@arfreelance/eslint-plugin": "^0.0.0",
+        "@babel/core": "^7.18.6",
+        "@babel/eslint-parser": "^7.18.2",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "lodash": "^4.17.21"
+    },
+    "peerDependencies": {
+        "eslint": "^8.19.0"
+    }
+}
