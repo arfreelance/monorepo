@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/conobanegas/arfreelance/compare/v0.6.0...v0.7.0) (2022-08-05)
+
+### Features
+
+-   **base:** add preserve aspect ratio to svg icons ([25c2b71](https://github.com/conobanegas/arfreelance/commit/25c2b710a5b15f55300737e6f69543b6152126ae))
+-   **base:** change custom form elements to classes ([e75fd32](https://github.com/conobanegas/arfreelance/commit/e75fd32e24176ed531c5ff7e9e53de2f6894bd96))
+
 # [0.6.0](https://github.com/conobanegas/arfreelance/compare/v0.5.0...v0.6.0) (2022-08-05)
 
 **Note:** Version bump only for package @arfreelance/base

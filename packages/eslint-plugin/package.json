@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/eslint-plugin",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "license": "ISC",
     "author": "Lucas Banegas <conobanegas@gmail.com>",
     "description": "Package in experimental stage. Do not use for production.",
