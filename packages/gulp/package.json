@@ -1,0 +1,43 @@
+{
+    "name": "@arfreelance/gulp",
+    "version": "0.0.0",
+    "license": "ISC",
+    "author": "Lucas Banegas <conobanegas@gmail.com>",
+    "description": "Package in experimental stage. Do not use for production.",
+    "homepage": "https://github.com/conobanegas/arfreelance/tree/main/packages/gulp#readme",
+    "repository": "https://github.com/conobanegas/arfreelance.git",
+    "bugs": "https://github.com/conobanegas/arfreelance/issues",
+    "main": "lib/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@ampproject/toolbox-optimizer": "^2.9.0",
+        "@ronilaukkarinen/gulp-stylelint": "^14.0.6",
+        "autoprefixer": "^10.4.7",
+        "clean-css": "^5.3.1",
+        "cssnano": "^5.1.12",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-data": "^1.3.1",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-postcss": "^9.0.1",
+        "gulp-prettier": "^4.0.0",
+        "gulp-pug": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp": "^4.0.2",
+        "pkg-dir": "^5.0.0",
+        "plugin-error": "^2.0.0",
+        "postcss": "^8.4.14",
+        "purgecss": "^4.1.3",
+        "require-dir": "^1.2.0",
+        "rimraf": "^3.0.2",
+        "sass": "^1.53.0",
+        "through2": "^4.0.2",
+        "upath": "^2.0.1"
+    },
+    "peerDependencies": {
+        "gulp": "^4.0.2"
+    }
+}
