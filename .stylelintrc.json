@@ -1,0 +1,4 @@
+{
+    "extends": ["@arfreelance/stylelint-config"],
+    "plugins": ["@arfreelance/stylelint-plugin"]
+}

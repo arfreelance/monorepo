@@ -1,0 +1,6 @@
+# stylelintignore
+
+**/bower_components/**
+**/node_modules/**
+**/vendor/**
+**/*.min.*
