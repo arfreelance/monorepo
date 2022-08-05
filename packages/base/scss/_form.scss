@@ -1,0 +1,330 @@
+// @argentinafreelance/framework
+
+// Forms
+// -----------------------------------------------------------------------------
+
+@if $enable-form == true {
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    button,
+    select {
+        text-transform: none;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: button;
+
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: 0;
+        }
+
+        &:-moz-focusring {
+            outline: auto;
+        }
+
+        &::-moz-focus-inner {
+            padding: 0;
+            border-style: none;
+        }
+    }
+
+    fieldset {
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    input,
+    textarea {
+        &::placeholder {
+            color: $placeholder-color;
+            opacity: $placeholder-opacity;
+        }
+    }
+
+    input {
+        &[type="file"] {
+            &::-webkit-file-upload-button {
+                -webkit-appearance: button;
+                font: inherit;
+            }
+        }
+
+        &[type="number"] {
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                height: auto;
+            }
+        }
+
+        &[type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+
+            &::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+        }
+    }
+
+    label,
+    output {
+        display: inline-block;
+    }
+
+    legend {
+        padding: 0;
+    }
+
+    progress {
+        vertical-align: baseline;
+    }
+
+    select {
+        word-wrap: normal;
+    }
+
+    textarea {
+        overflow: auto;
+        resize: vertical;
+    }
+
+    :-moz-ui-invalid {
+        box-shadow: none;
+    }
+
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+
+    // Custom forms
+    // -------------------------------------------------------------------------
+
+    @if $enable-custom-form == true {
+        %input {
+            width: $input-width;
+            padding: $input-padding;
+            border-width: $input-border-width;
+            border-color: $input-border-color;
+            border-radius: $input-border-radius;
+            background-color: $input-background;
+            color: $input-color;
+            font-size: $input-font-size;
+            line-height: $input-line-height;
+            transition: $input-transition;
+            appearance: none;
+
+            &:focus {
+                border-color: $input-focus-border-color;
+                background-color: $input-focus-background;
+                color: $input-focus-color;
+                box-shadow: $input-focus-shadow;
+                outline-width: 0;
+            }
+        }
+
+        %checkbox {
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+            width: $checkbox-width;
+            height: $checkbox-height;
+            padding: 0;
+            border-width: $checkbox-border-width;
+            border-color: $checkbox-border-color;
+            background-color: $checkbox-background;
+            background-origin: border-box;
+            user-select: none;
+            transition: $checkbox-transition;
+            appearance: none;
+            print-color-adjust: exact;
+
+            &:focus {
+                border-color: $checkbox-focus-border-color;
+                background-color: $checkbox-focus-background;
+                box-shadow: $checkbox-focus-shadow;
+                outline-width: 0;
+            }
+        }
+
+        %checkbox-checked {
+            border-color: $checkbox-checked-border-color;
+            background-color: $checkbox-checked-background;
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            &:hover,
+            &:focus {
+                border-color: $checkbox-checked-focus-border-color;
+                background-color: $checkbox-checked-focus-background;
+            }
+        }
+
+        input {
+            &[type="text"],
+            &[type="email"],
+            &[type="url"],
+            &[type="password"],
+            &[type="number"],
+            &[type="date"],
+            &[type="datetime-local"],
+            &[type="month"],
+            &[type="search"],
+            &[type="tel"],
+            &[type="time"],
+            &[type="week"],
+            &[multiple] {
+                @extend %input;
+            }
+
+            &[type="checkbox"] {
+                @extend %checkbox;
+
+                border-radius: $checkbox-border-radius;
+
+                &:checked {
+                    @extend %checkbox-checked;
+
+                    background-image: $checkbox-checked-image;
+                }
+
+                &:indeterminate {
+                    @extend %checkbox-checked;
+
+                    background-image: $checkbox-indeterminate-image;
+                }
+            }
+
+            &[type="radio"] {
+                @extend %checkbox;
+
+                border-radius: $radio-border-radius;
+
+                &:checked {
+                    @extend %checkbox-checked;
+
+                    background-image: $radio-checked-image;
+                }
+            }
+
+            &[type="file"] {
+                padding: 0;
+                border-width: 0;
+                border-color: inherit;
+                border-radius: 0;
+                background: unset;
+                font-size: unset;
+                line-height: inherit;
+
+                &:focus {
+                    outline-width: 0;
+                }
+            }
+        }
+
+        select {
+            @extend %input;
+
+            padding-right: $select-padding-right;
+            background-image: $select-arrow-image;
+            background-position: right $select-background-position center;
+            background-size: $select-background-size;
+            background-repeat: no-repeat;
+            print-color-adjust: exact;
+
+            &[multiple] {
+                padding-right: $multiple-padding-right;
+                background-image: initial;
+                background-position: initial;
+                background-size: initial;
+                background-repeat: unset;
+                print-color-adjust: unset;
+            }
+        }
+
+        textarea {
+            @extend %input;
+        }
+
+        ::-webkit-datetime-edit-fields-wrapper {
+            padding: 0;
+        }
+
+        ::-webkit-date-and-time-value {
+            min-height: $datetime-value-height;
+        }
+
+        ::-webkit-datetime-edit,
+        ::-webkit-datetime-edit-year-field,
+        ::-webkit-datetime-edit-month-field,
+        ::-webkit-datetime-edit-day-field,
+        ::-webkit-datetime-edit-hour-field,
+        ::-webkit-datetime-edit-minute-field,
+        ::-webkit-datetime-edit-second-field,
+        ::-webkit-datetime-edit-millisecond-field,
+        ::-webkit-datetime-edit-meridiem-field {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    @if $enable-custom-button == true {
+        button,
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"],
+        [role="button"] {
+            width: $button-width;
+            padding: $button-padding;
+            border-width: $button-border-width;
+            border-color: $button-border-color;
+            border-radius: $button-border-radius;
+            background-color: $button-background;
+            color: $button-color;
+            line-height: $button-line-height;
+            transition: $button-transition;
+
+            &:hover {
+                border-color: $button-hover-border-color;
+                background-color: $button-hover-background;
+                color: $button-hover-color;
+                box-shadow: $button-hover-shadow;
+            }
+
+            &:focus {
+                border-color: $button-focus-border-color;
+                background-color: $button-focus-background;
+                color: $button-focus-color;
+                box-shadow: $button-focus-shadow;
+                outline-width: 0;
+            }
+        }
+    }
+}

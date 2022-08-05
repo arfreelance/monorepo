@@ -1,0 +1,207 @@
+// @argentinafreelance/framework
+
+@if $enable-base == true {
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: currentColor;
+    }
+
+    // Root
+    // -------------------------------------------------------------------------
+
+    html {
+        tab-size: $root-tab-size;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba($black, 0);
+    }
+
+    // Body
+    // -------------------------------------------------------------------------
+
+    body {
+        position: relative;
+        max-width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        background-color: $body-background;
+        color: $body-color;
+        font-weight: $body-font-weight;
+        font-style: $body-font-style;
+        font-size: $body-font-size;
+        font-family: $body-font-family;
+        line-height: $body-line-height;
+    }
+
+    // Headings
+    // -------------------------------------------------------------------------
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-weight: inherit;
+        font-size: inherit;
+    }
+
+    // Grouping content
+    // -------------------------------------------------------------------------
+
+    address {
+        font-style: inherit;
+        line-height: inherit;
+    }
+
+    blockquote,
+    figure,
+    p {
+        margin: 0;
+    }
+
+    hr {
+        height: 0;
+        margin: 0;
+        border-top-width: thin;
+        color: inherit;
+    }
+
+    // Codes
+    // -------------------------------------------------------------------------
+
+    code,
+    kbd,
+    pre,
+    samp {
+        font-size: inherit;
+        font-family: $font-family-monospace;
+    }
+
+    pre {
+        overflow: auto;
+        margin: 0;
+        -ms-overflow-style: scrollbar;
+    }
+
+    // Lists
+    // -------------------------------------------------------------------------
+
+    dl,
+    dd,
+    ol,
+    ul {
+        margin: 0;
+    }
+
+    ol,
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    // Text-level semantics
+    // -------------------------------------------------------------------------
+
+    abbr[title] {
+        text-decoration: underline dotted;
+    }
+
+    b,
+    strong {
+        font-weight: $strong-font-weight;
+    }
+
+    small {
+        font-size: $small-font-size;
+    }
+
+    sub,
+    sup {
+        position: relative;
+        vertical-align: baseline;
+        font-size: $sub-sup-font-size;
+        line-height: 0;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    // Links
+    // -------------------------------------------------------------------------
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+        transition: $transition-base;
+    }
+
+    // Embedded content
+    // -------------------------------------------------------------------------
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+        display: block;
+        vertical-align: middle;
+    }
+
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        border-style: solid;
+    }
+
+    svg {
+        overflow: hidden;
+    }
+
+    // Tabular data
+    // -------------------------------------------------------------------------
+
+    table {
+        border-collapse: collapse;
+        border-color: inherit;
+        text-indent: 0;
+    }
+
+    // Interactive elements
+    // -------------------------------------------------------------------------
+
+    summary {
+        display: list-item;
+        cursor: pointer;
+    }
+
+    // Scripting
+    // -------------------------------------------------------------------------
+
+    template {
+        display: none;
+    }
+
+    // Miscs
+    // -------------------------------------------------------------------------
+
+    [hidden] {
+        display: none;
+    }
+}

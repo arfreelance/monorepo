@@ -1,0 +1,139 @@
+// @argentinafreelance/framework
+
+@use "sass:math";
+
+@if $enable-grid == true {
+    // Container widths
+    // -------------------------------------------------------------------------
+
+    %container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: $gutter * 0.5;
+        padding-left: $gutter * 0.5;
+    }
+
+    .container,
+    .container-fluid {
+        @extend %container;
+    }
+
+    @each $breakpoint, $max-width in $containers {
+        .container-#{$breakpoint} {
+            @extend %container;
+        }
+
+        @include breakpoint-up($breakpoint) {
+            $extend-breakpoint: true;
+
+            %responsive-container-#{$breakpoint} {
+                max-width: $max-width;
+            }
+
+            @each $name, $width in $breakpoints {
+                @if $extend-breakpoint {
+                    .container#{breakpoint-infix($name)} {
+                        @extend %responsive-container-#{$breakpoint};
+                    }
+
+                    @if $breakpoint == $name {
+                        $extend-breakpoint: false;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Row
+// -----------------------------------------------------------------------------
+
+@if $enable-grid == true {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -$gutter * 0.5;
+        margin-left: -$gutter * 0.5;
+    }
+}
+
+// Columns
+// -----------------------------------------------------------------------------
+
+%grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter * 0.5;
+    padding-left: $gutter * 0.5;
+}
+
+@if $enable-grid == true {
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint);
+
+        .col#{$infix},
+        .col#{$infix}-auto {
+            @extend %grid-column;
+        }
+
+        @if $columns > 0 {
+            @for $i from 1 through $columns {
+                .col#{$infix}-#{$i} {
+                    @extend %grid-column;
+                }
+            }
+        }
+
+        @include breakpoint-up($breakpoint) {
+            .col#{$infix} {
+                flex-grow: 1;
+                flex-basis: 0;
+                max-width: 100%;
+            }
+
+            .col#{$infix}-auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: 100%;
+            }
+
+            @if $columns > 0 {
+                @for $i from 1 through $columns {
+                    .col#{$infix}-#{$i} {
+                        $num: math.div($i, $columns);
+                        $val: math.percentage($num);
+
+                        flex: 0 0 $val;
+                        max-width: $val;
+                    }
+                }
+
+                @for $i from 0 through ($columns - 1) {
+                    @if not($infix == "" and $i == 0) {
+                        .offset#{$infix}-#{$i} {
+                            $num: math.div($i, $columns);
+                            $val: math.percentage($num);
+
+                            margin-left: if($num == 0, 0, $val);
+                        }
+                    }
+                }
+            }
+
+            @for $i from 0 through $columns {
+                .order#{$infix}-#{$i} {
+                    order: $i;
+                }
+            }
+
+            .order#{$infix}-first {
+                order: -1;
+            }
+
+            .order#{$infix}-last {
+                order: $columns + 1;
+            }
+        }
+    }
+}
