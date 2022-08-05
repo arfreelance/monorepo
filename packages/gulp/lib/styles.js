@@ -3,6 +3,7 @@
 const { src, dest } = require("gulp");
 const cleancss = require("gulp-clean-css");
 const compiler = require("sass");
+const formatter = require("stylelint-formatter-pretty");
 const path = require("upath");
 const pkgDir = require("pkg-dir");
 const postcss = require("gulp-postcss");
@@ -62,7 +63,7 @@ const options = {
         allowEmptyInput: true,
         failAfterError: true,
         fix: true,
-        reporters: [{ formatter: "string", console: true }],
+        reporters: [{ formatter, console: true }],
     },
 };
 
