@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/stylelint-config",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "license": "ISC",
     "author": "Lucas Banegas <conobanegas@gmail.com>",
     "description": "Package in experimental stage. Do not use for production.",
@@ -12,7 +12,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@arfreelance/stylelint-plugin": "^0.2.0",
+        "@arfreelance/stylelint-plugin": "^0.3.0",
         "lodash": "^4.17.21",
         "stylelint-config-prettier-scss": "^0.0.1",
         "stylelint-config-standard-scss": "^4.0.0"
