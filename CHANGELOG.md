@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/conobanegas/arfreelance/compare/v0.3.0...v0.4.0) (2022-08-05)
+
+### Features
+
+-   **base:** initial commit ([bb67414](https://github.com/conobanegas/arfreelance/commit/bb674141f7d7f458680cabffadc70adebf0a216a))
+-   **gulp:** add stylelint custom formatter ([bddb18a](https://github.com/conobanegas/arfreelance/commit/bddb18a6ef1f67f91d8bc6a8f843bfbdc38076ed))
+
 # [0.3.0](https://github.com/conobanegas/arfreelance/compare/v0.2.0...v0.3.0) (2022-08-05)
 
 ### Features
