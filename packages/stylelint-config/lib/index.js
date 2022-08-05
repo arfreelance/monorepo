@@ -15,7 +15,7 @@ const custom = {
         "no-descending-specificity": null,
         "no-duplicate-selectors": null,
         "no-empty-source": null,
-        "number-max-precision": [5, { ignoreUnits: ["%"] }],
+        "number-max-precision": null,
         "value-keyword-case": null,
         "rule-empty-line-before": ["always", { except: ["first-nested"] }],
         "at-rule-empty-line-before": [
