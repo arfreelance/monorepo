@@ -70,6 +70,18 @@
 
     input {
         &[type="file"] {
+            padding: 0;
+            border-width: 0;
+            border-color: inherit;
+            border-radius: 0;
+            background: unset;
+            font-size: unset;
+            line-height: inherit;
+
+            &:focus {
+                outline-width: 0;
+            }
+
             &::-webkit-file-upload-button {
                 -webkit-appearance: button;
                 font: inherit;
@@ -117,6 +129,27 @@
 
     :-moz-ui-invalid {
         box-shadow: none;
+    }
+
+    ::-webkit-datetime-edit-fields-wrapper {
+        padding: 0;
+    }
+
+    ::-webkit-date-and-time-value {
+        min-height: $datetime-value-height;
+    }
+
+    ::-webkit-datetime-edit,
+    ::-webkit-datetime-edit-year-field,
+    ::-webkit-datetime-edit-month-field,
+    ::-webkit-datetime-edit-day-field,
+    ::-webkit-datetime-edit-hour-field,
+    ::-webkit-datetime-edit-minute-field,
+    ::-webkit-datetime-edit-second-field,
+    ::-webkit-datetime-edit-millisecond-field,
+    ::-webkit-datetime-edit-meridiem-field {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     [role="button"]:not(:disabled) {
@@ -187,69 +220,41 @@
             }
         }
 
-        input {
-            &[type="text"],
-            &[type="email"],
-            &[type="url"],
-            &[type="password"],
-            &[type="number"],
-            &[type="date"],
-            &[type="datetime-local"],
-            &[type="month"],
-            &[type="search"],
-            &[type="tel"],
-            &[type="time"],
-            &[type="week"],
-            &[multiple] {
-                @extend %input;
+        .input {
+            @extend %input;
+        }
+
+        .checkbox {
+            @extend %checkbox;
+
+            border-radius: $checkbox-border-radius;
+
+            &:checked {
+                @extend %checkbox-checked;
+
+                background-image: $checkbox-checked-image;
             }
 
-            &[type="checkbox"] {
-                @extend %checkbox;
+            &:indeterminate {
+                @extend %checkbox-checked;
 
-                border-radius: $checkbox-border-radius;
-
-                &:checked {
-                    @extend %checkbox-checked;
-
-                    background-image: $checkbox-checked-image;
-                }
-
-                &:indeterminate {
-                    @extend %checkbox-checked;
-
-                    background-image: $checkbox-indeterminate-image;
-                }
-            }
-
-            &[type="radio"] {
-                @extend %checkbox;
-
-                border-radius: $radio-border-radius;
-
-                &:checked {
-                    @extend %checkbox-checked;
-
-                    background-image: $radio-checked-image;
-                }
-            }
-
-            &[type="file"] {
-                padding: 0;
-                border-width: 0;
-                border-color: inherit;
-                border-radius: 0;
-                background: unset;
-                font-size: unset;
-                line-height: inherit;
-
-                &:focus {
-                    outline-width: 0;
-                }
+                background-image: $checkbox-indeterminate-image;
             }
         }
 
-        select {
+        .radio {
+            @extend %checkbox;
+
+            border-radius: $radio-border-radius;
+
+            &:checked {
+                @extend %checkbox-checked;
+
+                background-image: $radio-checked-image;
+            }
+        }
+
+        .select {
             @extend %input;
 
             padding-right: $select-padding-right;
@@ -269,38 +274,14 @@
             }
         }
 
-        textarea {
+        .textarea {
             @extend %input;
-        }
-
-        ::-webkit-datetime-edit-fields-wrapper {
-            padding: 0;
-        }
-
-        ::-webkit-date-and-time-value {
-            min-height: $datetime-value-height;
-        }
-
-        ::-webkit-datetime-edit,
-        ::-webkit-datetime-edit-year-field,
-        ::-webkit-datetime-edit-month-field,
-        ::-webkit-datetime-edit-day-field,
-        ::-webkit-datetime-edit-hour-field,
-        ::-webkit-datetime-edit-minute-field,
-        ::-webkit-datetime-edit-second-field,
-        ::-webkit-datetime-edit-millisecond-field,
-        ::-webkit-datetime-edit-meridiem-field {
-            padding-top: 0;
-            padding-bottom: 0;
         }
     }
 
     @if $enable-custom-button == true {
-        button,
-        input[type="button"],
-        input[type="submit"],
-        input[type="reset"],
-        [role="button"] {
+        .button {
+            display: inline-block;
             width: $button-width;
             padding: $button-padding;
             border-width: $button-border-width;
