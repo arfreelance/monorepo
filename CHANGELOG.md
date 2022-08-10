@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/conobanegas/arfreelance/compare/v0.7.0...v0.8.0) (2022-08-10)
+
+### Features
+
+-   **base:** improve custom button ([9170803](https://github.com/conobanegas/arfreelance/commit/917080374106f435587ae6ed0a4d02e93f574d68))
+-   **base:** initial utilities ([b070c6a](https://github.com/conobanegas/arfreelance/commit/b070c6ad4ae61a4e1d4d43739867c65acdcd7842))
+
 # [0.7.0](https://github.com/conobanegas/arfreelance/compare/v0.6.0...v0.7.0) (2022-08-05)
 
 ### Features
