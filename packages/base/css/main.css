@@ -489,6 +489,12 @@ textarea {
     background-color: #000;
     color: #fff;
     line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transition: background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
         color 0.15s ease-in-out;

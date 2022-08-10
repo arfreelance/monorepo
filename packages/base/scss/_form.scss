@@ -290,6 +290,9 @@
             background-color: $button-background;
             color: $button-color;
             line-height: $button-line-height;
+            text-align: center;
+            white-space: nowrap;
+            user-select: none;
             transition: $button-transition;
 
             &:hover {
