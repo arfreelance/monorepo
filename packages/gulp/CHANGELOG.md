@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/conobanegas/arfreelance/compare/v0.8.0...v0.9.0) (2022-08-10)
+
+### Features
+
+-   **gulp:** add webp ([3a3951a](https://github.com/conobanegas/arfreelance/commit/3a3951af4b0c9c033ccfb3b37666272ab8722232))
+
 # [0.8.0](https://github.com/conobanegas/arfreelance/compare/v0.7.0...v0.8.0) (2022-08-10)
 
 **Note:** Version bump only for package @arfreelance/gulp
