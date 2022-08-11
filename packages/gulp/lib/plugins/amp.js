@@ -15,7 +15,7 @@ const AmpOptimizerModule = "@ampproject/toolbox-optimizer";
 const AmpOptimizerClass = require(AmpOptimizerModule);
 const ampOptimizerPath = require.resolve(AmpOptimizerModule);
 const ampOptimizerDir = dirname(ampOptimizerPath);
-const ampOptimizer = AmpOptimizerClass.create();
+const ampOptimizer = AmpOptimizerClass.create({ maxHeroImageCount: 10 });
 
 // Tree parser
 // -----------------------------------------------------------------------------
