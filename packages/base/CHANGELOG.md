@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/conobanegas/arfreelance/compare/v0.10.0...v0.11.0) (2022-08-12)
+
+### Features
+
+-   **base:** add position utilities ([d8d702e](https://github.com/conobanegas/arfreelance/commit/d8d702ec5d749e7abf59e1624d0f766e788cf69e))
+
 # [0.10.0](https://github.com/conobanegas/arfreelance/compare/v0.9.0...v0.10.0) (2022-08-11)
 
 **Note:** Version bump only for package @arfreelance/base
