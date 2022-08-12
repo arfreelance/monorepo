@@ -301,6 +301,27 @@ input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
+input::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+}
+
+input::-webkit-date-and-time-value {
+    min-height: 1.5em;
+}
+
+input::-webkit-datetime-edit,
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-hour-field,
+input::-webkit-datetime-edit-meridiem-field,
+input::-webkit-datetime-edit-millisecond-field,
+input::-webkit-datetime-edit-minute-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-second-field,
+input::-webkit-datetime-edit-year-field {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 label,
 output {
     display: inline-block;
@@ -325,27 +346,6 @@ textarea {
 
 :-moz-ui-invalid {
     box-shadow: none;
-}
-
-::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-}
-
-::-webkit-date-and-time-value {
-    min-height: 1.5em;
-}
-
-::-webkit-datetime-edit,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-meridiem-field,
-::-webkit-datetime-edit-millisecond-field,
-::-webkit-datetime-edit-minute-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-second-field,
-::-webkit-datetime-edit-year-field {
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 [role="button"]:not(:disabled) {
@@ -482,6 +482,7 @@ textarea {
 
 .button {
     display: inline-block;
+    vertical-align: middle;
     padding: 0.375em 0.75em;
     border-width: thin;
     border-color: #000;
@@ -899,6 +900,27 @@ textarea {
     padding: 0;
     border: 0;
     white-space: nowrap;
+}
+
+.position-static {
+    position: static;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-sticky {
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 .d-none {

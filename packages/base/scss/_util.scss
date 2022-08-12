@@ -1,5 +1,13 @@
 // @argentinafreelance/base
 
+// Position
+
+@each $position in $positions {
+    .position-#{$position} {
+        position: $position;
+    }
+}
+
 // Display
 // -----------------------------------------------------------------------------
 
