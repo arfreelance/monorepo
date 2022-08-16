@@ -306,7 +306,7 @@
         }
 
         &::-webkit-date-and-time-value {
-            min-height: $datetime-value-height;
+            min-height: 1.5em;
         }
 
         &::-webkit-datetime-edit,

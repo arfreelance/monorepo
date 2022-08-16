@@ -16,7 +16,14 @@ task("build", () => {
     return styles.build("./scss/main.scss", "css");
 });
 
+// Minify task(s)
+// -----------------------------------------------------------------------------
+
+task("minify", () => {
+    return styles.minify("./css/main.css", "css");
+});
+
 // Default task(s)
 // -----------------------------------------------------------------------------
 
-task("default", series("test", "build"));
+task("default", series("test", "build", "minify"));
