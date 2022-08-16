@@ -86,7 +86,14 @@ module.exports.build = (source, target) => {
         .pipe(postcss(options.postcss))
         .pipe(prettier())
         .pipe(stylelint(options.stylelint))
-        .pipe(dest(target))
+        .pipe(dest(target));
+};
+
+// Minify
+// -----------------------------------------------------------------------------
+
+module.exports.minify = (source, target) => {
+    return src(source)
         .pipe(cleancss(options.cleancss))
         .pipe(rename(options.rename))
         .pipe(dest(target));
