@@ -13,15 +13,9 @@ const webp = require("gulp-webp");
 // -----------------------------------------------------------------------------
 
 const getVariant = async (file, size) => {
-    const scale = `${Math.floor(size * 100)}`;
-    const suffix = scale.padStart(3, "0");
-    const stem = `${file.stem}-${suffix}`;
-
     const meta = await readPromise(file);
     const maxWidth = Math.floor(meta.width * size);
     const maxHeight = Math.floor(meta.height * size);
-
-    file.stem = stem;
     file.scale = { maxWidth, maxHeight };
     return file;
 };
