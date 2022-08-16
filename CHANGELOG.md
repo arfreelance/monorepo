@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/conobanegas/arfreelance/compare/v0.14.1...v0.14.2) (2022-08-16)
+
+### Bug Fixes
+
+-   **gulp:** require correct promisify ([24956aa](https://github.com/conobanegas/arfreelance/commit/24956aaa15b5ea042694fb55cf98778453e54be2))
+
 ## [0.14.1](https://github.com/conobanegas/arfreelance/compare/v0.14.0...v0.14.1) (2022-08-16)
 
 ### Bug Fixes
