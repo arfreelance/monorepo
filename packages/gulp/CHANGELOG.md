@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/conobanegas/arfreelance/compare/v0.14.0...v0.14.1) (2022-08-16)
+
+### Bug Fixes
+
+-   **gulp:** add missing deps ([636ab21](https://github.com/conobanegas/arfreelance/commit/636ab21526b5e354808d08794f68695adda4d3e9))
+
 # [0.14.0](https://github.com/conobanegas/arfreelance/compare/v0.13.0...v0.14.0) (2022-08-16)
 
 ### Features
