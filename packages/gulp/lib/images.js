@@ -1,11 +1,11 @@
 // @arfreelance/gulp
 
+const { promisify } = require("util");
 const { src, dest } = require("gulp");
 const imagemin = require("gulp-imagemin");
 const map = require("flat-map").default;
-const promisify = require("util/promisify");
-const readOriginal = require("gulp-scale-images/read-metadata");
-const readPromise = promisify(readOriginal);
+const read = require("gulp-scale-images/read-metadata");
+const readPromise = promisify(read);
 const scale = require("gulp-scale-images");
 const webp = require("gulp-webp");
 
