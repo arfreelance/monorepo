@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/base",
-    "version": "0.14.2",
+    "version": "0.14.3",
     "license": "ISC",
     "author": "Lucas Banegas <conobanegas@gmail.com>",
     "description": "Package in experimental stage. Do not use for production.",
@@ -15,7 +15,7 @@
         "build": "gulp --color"
     },
     "devDependencies": {
-        "@arfreelance/gulp": "^0.14.2",
+        "@arfreelance/gulp": "^0.14.3",
         "gulp": "^4.0.2"
     }
 }
