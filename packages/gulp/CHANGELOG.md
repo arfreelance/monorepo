@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/conobanegas/arfreelance/compare/v0.11.0...v0.12.0) (2022-08-16)
+
+### Features
+
+-   **gulp:** split build and minify tasks ([a0a7def](https://github.com/conobanegas/arfreelance/commit/a0a7def0b6b06ad6bc7e20d962b803c353a6ca7e))
+
 # [0.11.0](https://github.com/conobanegas/arfreelance/compare/v0.10.0...v0.11.0) (2022-08-12)
 
 **Note:** Version bump only for package @arfreelance/gulp
