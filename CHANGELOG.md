@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/conobanegas/arfreelance/compare/v0.12.0...v0.13.0) (2022-08-16)
+
+### Features
+
+-   **base:** add minify task ([61a4e2e](https://github.com/conobanegas/arfreelance/commit/61a4e2e96c39fd142a394d1c9abb3fed73214e1d))
+
 # [0.12.0](https://github.com/conobanegas/arfreelance/compare/v0.11.0...v0.12.0) (2022-08-16)
 
 ### Features
