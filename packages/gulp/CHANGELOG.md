@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/conobanegas/arfreelance/compare/v0.13.0...v0.14.0) (2022-08-16)
+
+### Features
+
+-   **gulp:** add images minifier ([5b61b6b](https://github.com/conobanegas/arfreelance/commit/5b61b6b3bc6f74dbf736070ec1c8806397917b37))
+
 # [0.13.0](https://github.com/conobanegas/arfreelance/compare/v0.12.0...v0.13.0) (2022-08-16)
 
 **Note:** Version bump only for package @arfreelance/gulp
