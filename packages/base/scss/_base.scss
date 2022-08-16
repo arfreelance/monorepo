@@ -27,7 +27,7 @@
         max-width: 100%;
         min-height: 100vh;
         margin: 0;
-        background-color: $body-background;
+        background-color: $body-background-color;
         color: $body-color;
         font-weight: $body-font-weight;
         font-style: $body-font-style;
@@ -196,6 +196,161 @@
 
     template {
         display: none;
+    }
+
+    // Forms
+    // -------------------------------------------------------------------------
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    button,
+    select {
+        text-transform: none;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: button;
+
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: 0;
+        }
+
+        &:-moz-focusring {
+            outline: auto;
+        }
+
+        &::-moz-focus-inner {
+            padding: 0;
+            border-style: none;
+        }
+    }
+
+    fieldset {
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    input,
+    textarea {
+        &::placeholder {
+            color: $placeholder-color;
+            opacity: $placeholder-opacity;
+        }
+    }
+
+    input {
+        &[type="file"] {
+            padding: 0;
+            border-width: 0;
+            border-color: inherit;
+            border-radius: 0;
+            background: unset;
+            font-size: unset;
+            line-height: inherit;
+
+            &:focus {
+                outline-width: 0;
+            }
+
+            &::-webkit-file-upload-button {
+                -webkit-appearance: button;
+                font: inherit;
+            }
+        }
+
+        &[type="number"] {
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                height: auto;
+            }
+        }
+
+        &[type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+
+            &::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+        }
+
+        &::-webkit-datetime-edit-fields-wrapper {
+            padding: 0;
+        }
+
+        &::-webkit-date-and-time-value {
+            min-height: $datetime-value-height;
+        }
+
+        &::-webkit-datetime-edit,
+        &::-webkit-datetime-edit-year-field,
+        &::-webkit-datetime-edit-month-field,
+        &::-webkit-datetime-edit-day-field,
+        &::-webkit-datetime-edit-hour-field,
+        &::-webkit-datetime-edit-minute-field,
+        &::-webkit-datetime-edit-second-field,
+        &::-webkit-datetime-edit-millisecond-field,
+        &::-webkit-datetime-edit-meridiem-field {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    label,
+    output {
+        display: inline-block;
+    }
+
+    legend {
+        padding: 0;
+    }
+
+    progress {
+        vertical-align: baseline;
+    }
+
+    select {
+        word-wrap: normal;
+    }
+
+    textarea {
+        overflow: auto;
+        resize: vertical;
+    }
+
+    :-moz-ui-invalid {
+        box-shadow: none;
+    }
+
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
     }
 
     // Miscs

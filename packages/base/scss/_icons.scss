@@ -2,11 +2,11 @@
 
 @use "sass:string";
 
-// Font faces
-// -----------------------------------------------------------------------------
-// stylelint-disable font-family-no-missing-generic-family-keyword
+@if $enable-icons == true {
+    // Font faces
+    // -------------------------------------------------------------------------
+    // stylelint-disable font-family-no-missing-generic-family-keyword
 
-@if $enable-icons-brands == true {
     @font-face {
         font-weight: 400;
         font-style: normal;
@@ -14,9 +14,7 @@
         src: url("#{$icons-path}/brands.woff2") format("woff2"), url("#{$icons-path}/brands.ttf") format("truetype");
         font-display: $icons-display;
     }
-}
 
-@if $enable-icons-regular == true {
     @font-face {
         font-weight: 400;
         font-style: normal;
@@ -24,9 +22,7 @@
         src: url("#{$icons-path}/regular.woff2") format("woff2"), url("#{$icons-path}/regular.ttf") format("truetype");
         font-display: $icons-display;
     }
-}
 
-@if $enable-icons-solid == true {
     @font-face {
         font-weight: 900;
         font-style: normal;
@@ -34,67 +30,57 @@
         src: url("#{$icons-path}/solid.woff2") format("woff2"), url("#{$icons-path}/solid.ttf") format("truetype");
         font-display: $icons-display;
     }
-}
 
-// Core
-// -----------------------------------------------------------------------------
+    // Core
+    // -------------------------------------------------------------------------
 
-%icon-base {
-    font-style: normal;
-    font-variant: normal;
-    font-size: $icons-font-size;
-    line-height: 1;
-    text-rendering: auto;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+    %icon-base {
+        font-style: normal;
+        font-variant: normal;
+        font-size: $icons-font-size;
+        line-height: 1;
+        text-rendering: auto;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
 
-    &,
-    &::before {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        &,
+        &::before {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
-}
 
-@if $enable-icons-brands == true {
     .#{$icons-prefix}-brands {
         @extend %icon-base;
 
         font-weight: 400;
         font-family: brands;
     }
-}
 
-@if $enable-icons-regular == true {
     .#{$icons-prefix}-regular {
         @extend %icon-base;
 
         font-weight: 400;
         font-family: icons;
     }
-}
 
-@if $enable-icons-solid == true {
     .#{$icons-prefix}-solid {
         @extend %icon-base;
 
         font-weight: 900;
         font-family: icons;
     }
-}
 
-// Classes
-// -----------------------------------------------------------------------------
+    // Classes
+    // -------------------------------------------------------------------------
 
-@if $enable-icons-regular == true or $enable-icons-solid == true {
     @each $name, $icon in $icons {
         .#{$icons-prefix}-#{$name}::before {
             content: string.unquote('"#{ $icon }"');
         }
     }
-}
 
-@if $enable-icons-brands == true {
     @each $name, $icon in $brands {
         .#{$icons-prefix}-#{$name}::before {
             content: string.unquote('"#{ $icon }"');

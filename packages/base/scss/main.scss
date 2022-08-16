@@ -3,9 +3,10 @@
 // Vendors
 // -----------------------------------------------------------------------------
 
-@import "color";
+@import "vendors/colors";
+@import "vendors/icons";
 
-// Configuration
+// Core
 // -----------------------------------------------------------------------------
 
 @import "vars";
@@ -15,8 +16,7 @@
 // -----------------------------------------------------------------------------
 
 @import "base";
-@import "form";
 @import "grid";
-@import "help";
-@import "util";
+@import "helpers";
+@import "utils";
 @import "icons";

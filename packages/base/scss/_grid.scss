@@ -2,10 +2,10 @@
 
 @use "sass:math";
 
-@if $enable-grid == true {
-    // Container widths
-    // -------------------------------------------------------------------------
+// Container widths
+// -----------------------------------------------------------------------------
 
+@if $enable-grid == true {
     %container {
         width: 100%;
         margin-right: auto;
@@ -24,7 +24,7 @@
             @extend %container;
         }
 
-        @include breakpoint-up($breakpoint) {
+        @include superior-to($breakpoint) {
             $extend-breakpoint: true;
 
             %responsive-container-#{$breakpoint} {
@@ -33,7 +33,7 @@
 
             @each $name, $width in $breakpoints {
                 @if $extend-breakpoint {
-                    .container#{breakpoint-infix($name)} {
+                    .container#{infix($name)} {
                         @extend %responsive-container-#{$breakpoint};
                     }
 
@@ -70,7 +70,7 @@
 
 @if $enable-grid == true {
     @each $breakpoint in map-keys($breakpoints) {
-        $infix: breakpoint-infix($breakpoint);
+        $infix: infix($breakpoint);
 
         .col#{$infix},
         .col#{$infix}-auto {
@@ -85,7 +85,7 @@
             }
         }
 
-        @include breakpoint-up($breakpoint) {
+        @include superior-to($breakpoint) {
             .col#{$infix} {
                 flex-grow: 1;
                 flex-basis: 0;

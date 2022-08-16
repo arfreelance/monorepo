@@ -7,7 +7,7 @@
 // Null for the last breakpoint.
 // -----------------------------------------------------------------------------
 
-@function breakpoint-next($name) {
+@function next($name) {
     $names: map.keys($breakpoints);
     $index: list.index($names, $name);
 
@@ -18,7 +18,7 @@
 // Null for the smallest (first) breakpoint.
 // -----------------------------------------------------------------------------
 
-@function breakpoint-min($name) {
+@function min($name) {
     $min: map.get($breakpoints, $name);
 
     @return if($min != 0, $min, null);
@@ -28,26 +28,26 @@
 // Null for the largest (last) breakpoint.
 // -----------------------------------------------------------------------------
 
-@function breakpoint-max($name) {
-    $next: breakpoint-next($name);
+@function max($name) {
+    $next: next($name);
 
-    @return if($next, breakpoint-min($next) - 0.02, null);
+    @return if($next, min($next) - 0.02, null);
 }
 
 // Returns a blank string if smallest breakpoint,
 // otherwise returns the name with a dash in front.
 // -----------------------------------------------------------------------------
 
-@function breakpoint-infix($name) {
-    @return if(breakpoint-min($name) == null, "", "-#{$name}");
+@function infix($name) {
+    @return if(min($name) == null, "", "-#{$name}");
 }
 
 // Media of at least the minimum breakpoint width.
 // No query for the smallest breakpoint.
 // -----------------------------------------------------------------------------
 
-@mixin breakpoint-up($name) {
-    $min: breakpoint-min($name);
+@mixin superior-to($name) {
+    $min: min($name);
 
     @if $min {
         @media (min-width: $min) {
@@ -62,8 +62,8 @@
 // No query for the largest breakpoint.
 // -----------------------------------------------------------------------------
 
-@mixin breakpoint-down($name) {
-    $max: breakpoint-max($name);
+@mixin inferior-to($name) {
+    $max: max($name);
 
     @if $max {
         @media (max-width: $max) {
@@ -77,20 +77,20 @@
 // Media that spans multiple breakpoint widths.
 // -----------------------------------------------------------------------------
 
-@mixin breakpoint-between($lower, $upper) {
-    $min: breakpoint-min($lower);
-    $max: breakpoint-max($upper);
+@mixin between($lower, $upper) {
+    $min: min($lower);
+    $max: max($upper);
 
     @if $min != null and $max != null {
         @media (min-width: $min) and (max-width: $max) {
             @content;
         }
     } @else if $max == null {
-        @include breakpoint-up($lower) {
+        @include superior-to($lower) {
             @content;
         }
     } @else if $min == null {
-        @include breakpoint-down($upper) {
+        @include inferior-to($upper) {
             @content;
         }
     }
@@ -99,20 +99,20 @@
 // Media between the breakpoint's minimum and maximum widths.
 // -----------------------------------------------------------------------------
 
-@mixin media-breakpoint-only($name) {
-    $min: breakpoint-min($name);
-    $max: breakpoint-max($name);
+@mixin only($name) {
+    $min: min($name);
+    $max: max($name);
 
     @if $min != null and $max != null {
         @media (min-width: $min) and (max-width: $max) {
             @content;
         }
     } @else if $max == null {
-        @include breakpoint-up($name) {
+        @include superior-to($name) {
             @content;
         }
     } @else if $min == null {
-        @include breakpoint-down($name) {
+        @include inferior-to($name) {
             @content;
         }
     }
