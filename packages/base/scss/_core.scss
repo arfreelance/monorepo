@@ -7,7 +7,7 @@
 // Null for the last breakpoint.
 // -----------------------------------------------------------------------------
 
-@function next($name) {
+@function breakpoint-next($name) {
     $names: map.keys($breakpoints);
     $index: list.index($names, $name);
 
@@ -18,7 +18,7 @@
 // Null for the smallest (first) breakpoint.
 // -----------------------------------------------------------------------------
 
-@function min($name) {
+@function breakpoint-min($name) {
     $min: map.get($breakpoints, $name);
 
     @return if($min != 0, $min, null);
@@ -28,10 +28,10 @@
 // Null for the largest (last) breakpoint.
 // -----------------------------------------------------------------------------
 
-@function max($name) {
-    $next: next($name);
+@function breakpoint-max($name) {
+    $next: breakpoint-next($name);
 
-    @return if($next, min($next) - 0.02, null);
+    @return if($next, breakpoint-min($next) - 0.02, null);
 }
 
 // Returns a blank string if smallest breakpoint,
@@ -39,7 +39,7 @@
 // -----------------------------------------------------------------------------
 
 @function infix($name) {
-    @return if(min($name) == null, "", "-#{$name}");
+    @return if(breakpoint-min($name) == null, "", "-#{$name}");
 }
 
 // Media of at least the minimum breakpoint width.
@@ -47,7 +47,7 @@
 // -----------------------------------------------------------------------------
 
 @mixin superior-to($name) {
-    $min: min($name);
+    $min: breakpoint-min($name);
 
     @if $min {
         @media (min-width: $min) {
@@ -63,7 +63,7 @@
 // -----------------------------------------------------------------------------
 
 @mixin inferior-to($name) {
-    $max: max($name);
+    $max: breakpoint-max($name);
 
     @if $max {
         @media (max-width: $max) {
@@ -78,8 +78,8 @@
 // -----------------------------------------------------------------------------
 
 @mixin between($lower, $upper) {
-    $min: min($lower);
-    $max: max($upper);
+    $min: breakpoint-min($lower);
+    $max: breakpoint-max($upper);
 
     @if $min != null and $max != null {
         @media (min-width: $min) and (max-width: $max) {
@@ -100,8 +100,8 @@
 // -----------------------------------------------------------------------------
 
 @mixin only($name) {
-    $min: min($name);
-    $max: max($name);
+    $min: breakpoint-min($name);
+    $max: breakpoint-max($name);
 
     @if $min != null and $max != null {
         @media (min-width: $min) and (max-width: $max) {
