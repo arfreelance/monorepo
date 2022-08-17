@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/conobanegas/arfreelance/compare/v0.14.3...v0.14.4) (2022-08-17)
+
+### Bug Fixes
+
+-   **base:** change function names ([196e875](https://github.com/conobanegas/arfreelance/commit/196e875ff418ec93278aaf850d5bb6a91d31129d))
+
 ## [0.14.3](https://github.com/conobanegas/arfreelance/compare/v0.14.2...v0.14.3) (2022-08-16)
 
 **Note:** Version bump only for package @arfreelance/base
