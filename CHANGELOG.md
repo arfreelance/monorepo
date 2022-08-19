@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/conobanegas/arfreelance/compare/v0.14.4...v0.15.0) (2022-08-19)
+
+### Features
+
+-   **gulp:** add globby to clean ([3874341](https://github.com/conobanegas/arfreelance/commit/3874341f2e6848cfdbe22c041dacfc8999699c6b))
+
 ## [0.14.4](https://github.com/conobanegas/arfreelance/compare/v0.14.3...v0.14.4) (2022-08-17)
 
 ### Bug Fixes
