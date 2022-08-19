@@ -10,6 +10,7 @@ const clean = promisify(rimraf);
 // -----------------------------------------------------------------------------
 
 const options = {
+    expandDirectories: false,
     gitignore: true,
 };
 
