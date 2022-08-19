@@ -10,8 +10,10 @@ const clean = promisify(rimraf);
 // -----------------------------------------------------------------------------
 
 const options = {
+    absolute: true,
     expandDirectories: false,
     gitignore: true,
+    onlyFiles: false,
 };
 
 // Normalize
