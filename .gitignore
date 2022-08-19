@@ -93,7 +93,6 @@ Temporary Items
 .yarn/cache
 .yarn/install-state.gz
 .yarn/unplugged
-/package-lock.json
 bower_components
 build/Release
 coverage
