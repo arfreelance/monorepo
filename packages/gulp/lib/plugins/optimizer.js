@@ -1,6 +1,6 @@
-// @arfreelance/gulp-amp
+// @arfreelance/gulp-optimizer
 
-const PLUGIN_NAME = "gulp-amp";
+const PLUGIN_NAME = "gulp-optimizer";
 
 const { dirname, resolve } = require("path");
 const { PurgeCSS } = require("purgecss");
@@ -15,6 +15,7 @@ const AmpOptimizerModule = "@ampproject/toolbox-optimizer";
 const AmpOptimizerClass = require(AmpOptimizerModule);
 const ampOptimizerPath = require.resolve(AmpOptimizerModule);
 const ampOptimizerDir = dirname(ampOptimizerPath);
+const ampOptimizer = AmpOptimizerClass.create({ maxHeroImageCount: 10 });
 
 // Tree parser
 // -----------------------------------------------------------------------------
@@ -25,21 +26,32 @@ const treeParser = require(treeParserPath);
 // Node utils
 // -----------------------------------------------------------------------------
 
-const { firstChildByTag } = AmpOptimizerClass.NodeUtils;
+const { firstChildByTag, hasAttribute } = AmpOptimizerClass.NodeUtils;
 
 // Minify node
 // -----------------------------------------------------------------------------
 
-const minifyNode = async (node, body) => {
-    const purgecssOptions = {
-        content: [{ raw: body, extension: "html" }],
-        css: [{ raw: node.data }],
-        safelist: [/^(html|:root)$/],
-    };
+const minifyNode = async (node, body, isAmp) => {
+    if (
+        !isAmp ||
+        ("attribs" in node.parent &&
+            ("amp-custom" in node.parent.attribs ||
+                "amp-keyframes" in node.parent.attribs))
+    ) {
+        const purgecssOptions = {
+            content: [{ raw: body, extension: "html" }],
+            css: [{ raw: node.data }],
+            safelist: [/^(html|:root)$/],
+        };
 
-    const purgecss = new PurgeCSS();
-    const purgecssResult = await purgecss.purge(purgecssOptions);
-    node.data = purgecssResult.shift().css.trim();
+        if (isAmp) {
+            purgecssOptions.safelist.push(/amp(html)?-/);
+        }
+
+        const purgecss = new PurgeCSS();
+        const purgecssResult = await purgecss.purge(purgecssOptions);
+        node.data = purgecssResult.shift().css.trim();
+    }
 
     const cleancssOptions = {
         returnPromise: true,
@@ -68,13 +80,13 @@ const minifyNode = async (node, body) => {
 // Process node
 // -----------------------------------------------------------------------------
 
-const processNode = async (node, body) => {
+const processNode = async (node, body, isAmp) => {
     if (node.children && Array.isArray(node.children) && node.children.length) {
         node.children = await Promise.all(
             node.children.map(async (subnode) => {
                 return node.type === "style"
-                    ? await minifyNode(subnode, body)
-                    : await processNode(subnode, body);
+                    ? await minifyNode(subnode, body, isAmp)
+                    : await processNode(subnode, body, isAmp);
             })
         );
     }
@@ -97,17 +109,32 @@ module.exports = () => {
             return callback(msg);
         }
 
-        const html = file.contents.toString();
-        const tree = await treeParser.parse(html);
-        const root = await firstChildByTag(tree, "html");
-        const body = await firstChildByTag(root, "body");
-        const bodyStr = await treeParser.serialize(body);
+        const docStr = file.contents.toString();
+        const docObj = await treeParser.parse(docStr);
+
+        const htmlObj = await firstChildByTag(docObj, "html");
+        const htmlStr = await treeParser.serialize(htmlObj);
+
+        const bodyObj = await firstChildByTag(htmlObj, "body");
+        const bodyStr = await treeParser.serialize(bodyObj);
+
+        const isAmp =
+            (await hasAttribute(htmlObj, "⚡")) ||
+            (await hasAttribute(htmlObj, "amp"));
 
         try {
-            const minifiedObj = await processNode(tree, bodyStr);
-            const minifiedStr = await treeParser.serialize(minifiedObj);
+            let str = htmlStr;
+            let obj = docObj;
 
-            file.contents = Buffer.from(minifiedStr);
+            if (isAmp) {
+                str = await ampOptimizer.transformHtml(str);
+                obj = await treeParser.parse(str);
+            }
+
+            obj = await processNode(obj, bodyStr, isAmp);
+            str = await treeParser.serialize(obj);
+
+            file.contents = Buffer.from(str);
             return callback(null, file);
         } catch (err) {
             const msg = new PluginError(PLUGIN_NAME, err);

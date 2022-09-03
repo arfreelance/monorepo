@@ -1,11 +1,10 @@
 // @arfreelance/gulp
 
 const { src, dest } = require("gulp");
-const amp = require("./plugins/amp");
 const data = require("gulp-data");
 const fs = require("fs");
 const gulpif = require("gulp-if");
-const noamp = require("./plugins/noamp");
+const optimizer = require("./plugins/optimizer");
 const path = require("path");
 const pkgDir = require("pkg-dir");
 const pug = require("gulp-pug");
@@ -43,6 +42,6 @@ module.exports = (source, target, isAmp = false) => {
     return src(source)
         .pipe(gulpif(isPug, data(loader)))
         .pipe(gulpif(isPug, pug(options)))
-        .pipe(gulpif(isAmp, amp(), noamp()))
+        .pipe(optimizer())
         .pipe(dest(target));
 };
