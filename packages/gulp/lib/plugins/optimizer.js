@@ -74,7 +74,7 @@ const minifyNode = async (node, body, isAmp) => {
     const cleancss = new CleanCSS(cleancssOptions);
     const cleancssResult = await cleancss.minify(node.data);
     node.data = cleancssResult.styles.trim();
-    return node;
+    return node.data.length ? node : null;
 };
 
 // Process node
@@ -89,6 +89,10 @@ const processNode = async (node, body, isAmp) => {
                     : await processNode(subnode, body, isAmp);
             })
         );
+
+        node.children = node.children.filter((subnode) => {
+            return subnode !== null;
+        });
     }
 
     return node;
