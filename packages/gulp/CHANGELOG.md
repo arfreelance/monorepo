@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/arfreelance/monorepo/compare/v0.17.0...v0.18.0) (2022-09-03)
+
+### Features
+
+-   **gulp:** add purgecss to styles minify ([0532693](https://github.com/arfreelance/monorepo/commit/05326932aee05ae1bfb7b4954b07db2f160f39ad))
+-   **gulp:** add scripts pipes ([04bc2fb](https://github.com/arfreelance/monorepo/commit/04bc2fb6890cacb2630444216fc8caa2c3af568a))
+-   **gulp:** improve pages pipes ([0641d7a](https://github.com/arfreelance/monorepo/commit/0641d7a9ef0536050bd0889f6b71f667a380446e))
+-   **gulp:** remove empty style elements ([33e9df3](https://github.com/arfreelance/monorepo/commit/33e9df3366364b3457a8f854cde786c1dac5405b))
+
+### Performance Improvements
+
+-   **gulp:** change amp plugin to optimizer plugin ([a19b6f1](https://github.com/arfreelance/monorepo/commit/a19b6f10d0aec9523c9a1425096659c0cb410664))
+
 # [0.17.0](https://github.com/arfreelance/monorepo/compare/v0.16.0...v0.17.0) (2022-08-19)
 
 ### Features
