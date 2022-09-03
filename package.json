@@ -1,13 +1,13 @@
 {
-    "name": "arfreelance",
+    "name": "@arfreelance/monorepo",
     "version": "0.0.0",
     "private": true,
     "license": "ISC",
     "author": "Lucas Banegas <conobanegas@gmail.com>",
     "description": "Package in experimental stage. Do not use for production.",
-    "homepage": "https://github.com/conobanegas/arfreelance#readme",
-    "repository": "https://github.com/conobanegas/arfreelance.git",
-    "bugs": "https://github.com/conobanegas/arfreelance/issues",
+    "homepage": "https://github.com/arfreelance/monorepo#readme",
+    "repository": "https://github.com/arfreelance/monorepo.git",
+    "bugs": "https://github.com/arfreelance/monorepo/issues",
     "scripts": {
         "prepare": "husky install",
         "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",

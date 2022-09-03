@@ -3,102 +3,102 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.17.0](https://github.com/conobanegas/arfreelance/compare/v0.16.0...v0.17.0) (2022-08-19)
+# [0.17.0](https://github.com/arfreelance/monorepo/compare/v0.16.0...v0.17.0) (2022-08-19)
 
 ### Features
 
--   **gulp:** add globby options ([31a41e3](https://github.com/conobanegas/arfreelance/commit/31a41e3531e3514bf30eb651256e3dd13ce02cf6))
+-   **gulp:** add globby options ([31a41e3](https://github.com/arfreelance/monorepo/commit/31a41e3531e3514bf30eb651256e3dd13ce02cf6))
 
-# [0.16.0](https://github.com/conobanegas/arfreelance/compare/v0.15.1...v0.16.0) (2022-08-19)
+# [0.16.0](https://github.com/arfreelance/monorepo/compare/v0.15.1...v0.16.0) (2022-08-19)
 
 ### Features
 
--   **gulp:** clean not expand directories ([d644c38](https://github.com/conobanegas/arfreelance/commit/d644c389f75a4ac12d28702488040d6c7a09d1a3))
+-   **gulp:** clean not expand directories ([d644c38](https://github.com/arfreelance/monorepo/commit/d644c389f75a4ac12d28702488040d6c7a09d1a3))
 
-## [0.15.1](https://github.com/conobanegas/arfreelance/compare/v0.15.0...v0.15.1) (2022-08-19)
+## [0.15.1](https://github.com/arfreelance/monorepo/compare/v0.15.0...v0.15.1) (2022-08-19)
 
 ### Bug Fixes
 
--   **gulp:** downgrade globby ([62da5c8](https://github.com/conobanegas/arfreelance/commit/62da5c8f47c9abf68a3a19cd5a0df1072a0c858b))
+-   **gulp:** downgrade globby ([62da5c8](https://github.com/arfreelance/monorepo/commit/62da5c8f47c9abf68a3a19cd5a0df1072a0c858b))
 
-# [0.15.0](https://github.com/conobanegas/arfreelance/compare/v0.14.4...v0.15.0) (2022-08-19)
+# [0.15.0](https://github.com/arfreelance/monorepo/compare/v0.14.4...v0.15.0) (2022-08-19)
 
 ### Features
 
--   **gulp:** add globby to clean ([3874341](https://github.com/conobanegas/arfreelance/commit/3874341f2e6848cfdbe22c041dacfc8999699c6b))
+-   **gulp:** add globby to clean ([3874341](https://github.com/arfreelance/monorepo/commit/3874341f2e6848cfdbe22c041dacfc8999699c6b))
 
-## [0.14.3](https://github.com/conobanegas/arfreelance/compare/v0.14.2...v0.14.3) (2022-08-16)
+## [0.14.3](https://github.com/arfreelance/monorepo/compare/v0.14.2...v0.14.3) (2022-08-16)
 
 **Note:** Version bump only for package @arfreelance/gulp
 
-## [0.14.2](https://github.com/conobanegas/arfreelance/compare/v0.14.1...v0.14.2) (2022-08-16)
+## [0.14.2](https://github.com/arfreelance/monorepo/compare/v0.14.1...v0.14.2) (2022-08-16)
 
 ### Bug Fixes
 
--   **gulp:** require correct promisify ([24956aa](https://github.com/conobanegas/arfreelance/commit/24956aaa15b5ea042694fb55cf98778453e54be2))
+-   **gulp:** require correct promisify ([24956aa](https://github.com/arfreelance/monorepo/commit/24956aaa15b5ea042694fb55cf98778453e54be2))
 
-## [0.14.1](https://github.com/conobanegas/arfreelance/compare/v0.14.0...v0.14.1) (2022-08-16)
+## [0.14.1](https://github.com/arfreelance/monorepo/compare/v0.14.0...v0.14.1) (2022-08-16)
 
 ### Bug Fixes
 
--   **gulp:** add missing deps ([636ab21](https://github.com/conobanegas/arfreelance/commit/636ab21526b5e354808d08794f68695adda4d3e9))
+-   **gulp:** add missing deps ([636ab21](https://github.com/arfreelance/monorepo/commit/636ab21526b5e354808d08794f68695adda4d3e9))
 
-# [0.14.0](https://github.com/conobanegas/arfreelance/compare/v0.13.0...v0.14.0) (2022-08-16)
-
-### Features
-
--   **gulp:** add images minifier ([5b61b6b](https://github.com/conobanegas/arfreelance/commit/5b61b6b3bc6f74dbf736070ec1c8806397917b37))
-
-# [0.13.0](https://github.com/conobanegas/arfreelance/compare/v0.12.0...v0.13.0) (2022-08-16)
-
-**Note:** Version bump only for package @arfreelance/gulp
-
-# [0.12.0](https://github.com/conobanegas/arfreelance/compare/v0.11.0...v0.12.0) (2022-08-16)
+# [0.14.0](https://github.com/arfreelance/monorepo/compare/v0.13.0...v0.14.0) (2022-08-16)
 
 ### Features
 
--   **gulp:** split build and minify tasks ([a0a7def](https://github.com/conobanegas/arfreelance/commit/a0a7def0b6b06ad6bc7e20d962b803c353a6ca7e))
+-   **gulp:** add images minifier ([5b61b6b](https://github.com/arfreelance/monorepo/commit/5b61b6b3bc6f74dbf736070ec1c8806397917b37))
 
-# [0.11.0](https://github.com/conobanegas/arfreelance/compare/v0.10.0...v0.11.0) (2022-08-12)
+# [0.13.0](https://github.com/arfreelance/monorepo/compare/v0.12.0...v0.13.0) (2022-08-16)
 
 **Note:** Version bump only for package @arfreelance/gulp
 
-# [0.10.0](https://github.com/conobanegas/arfreelance/compare/v0.9.0...v0.10.0) (2022-08-11)
+# [0.12.0](https://github.com/arfreelance/monorepo/compare/v0.11.0...v0.12.0) (2022-08-16)
 
 ### Features
 
--   **gulp:** extend maxHeroImageCount for amp plugin ([2e42828](https://github.com/conobanegas/arfreelance/commit/2e428284724e0582b94b04e1071d0baceacf5c09))
+-   **gulp:** split build and minify tasks ([a0a7def](https://github.com/arfreelance/monorepo/commit/a0a7def0b6b06ad6bc7e20d962b803c353a6ca7e))
 
-# [0.9.0](https://github.com/conobanegas/arfreelance/compare/v0.8.0...v0.9.0) (2022-08-10)
+# [0.11.0](https://github.com/arfreelance/monorepo/compare/v0.10.0...v0.11.0) (2022-08-12)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
+# [0.10.0](https://github.com/arfreelance/monorepo/compare/v0.9.0...v0.10.0) (2022-08-11)
 
 ### Features
 
--   **gulp:** add webp ([3a3951a](https://github.com/conobanegas/arfreelance/commit/3a3951af4b0c9c033ccfb3b37666272ab8722232))
+-   **gulp:** extend maxHeroImageCount for amp plugin ([2e42828](https://github.com/arfreelance/monorepo/commit/2e428284724e0582b94b04e1071d0baceacf5c09))
 
-# [0.8.0](https://github.com/conobanegas/arfreelance/compare/v0.7.0...v0.8.0) (2022-08-10)
-
-**Note:** Version bump only for package @arfreelance/gulp
-
-# [0.7.0](https://github.com/conobanegas/arfreelance/compare/v0.6.0...v0.7.0) (2022-08-05)
-
-**Note:** Version bump only for package @arfreelance/gulp
-
-# [0.6.0](https://github.com/conobanegas/arfreelance/compare/v0.5.0...v0.6.0) (2022-08-05)
-
-**Note:** Version bump only for package @arfreelance/gulp
-
-# [0.5.0](https://github.com/conobanegas/arfreelance/compare/v0.4.0...v0.5.0) (2022-08-05)
-
-**Note:** Version bump only for package @arfreelance/gulp
-
-# [0.4.0](https://github.com/conobanegas/arfreelance/compare/v0.3.0...v0.4.0) (2022-08-05)
+# [0.9.0](https://github.com/arfreelance/monorepo/compare/v0.8.0...v0.9.0) (2022-08-10)
 
 ### Features
 
--   **gulp:** add stylelint custom formatter ([bddb18a](https://github.com/conobanegas/arfreelance/commit/bddb18a6ef1f67f91d8bc6a8f843bfbdc38076ed))
+-   **gulp:** add webp ([3a3951a](https://github.com/arfreelance/monorepo/commit/3a3951af4b0c9c033ccfb3b37666272ab8722232))
 
-# [0.3.0](https://github.com/conobanegas/arfreelance/compare/v0.2.0...v0.3.0) (2022-08-05)
+# [0.8.0](https://github.com/arfreelance/monorepo/compare/v0.7.0...v0.8.0) (2022-08-10)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
+# [0.7.0](https://github.com/arfreelance/monorepo/compare/v0.6.0...v0.7.0) (2022-08-05)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
+# [0.6.0](https://github.com/arfreelance/monorepo/compare/v0.5.0...v0.6.0) (2022-08-05)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
+# [0.5.0](https://github.com/arfreelance/monorepo/compare/v0.4.0...v0.5.0) (2022-08-05)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
+# [0.4.0](https://github.com/arfreelance/monorepo/compare/v0.3.0...v0.4.0) (2022-08-05)
 
 ### Features
 
--   **gulp:** initial commit ([0a32707](https://github.com/conobanegas/arfreelance/commit/0a32707fe42456f2ccbd89d345a6dab59f655ceb))
+-   **gulp:** add stylelint custom formatter ([bddb18a](https://github.com/arfreelance/monorepo/commit/bddb18a6ef1f67f91d8bc6a8f843bfbdc38076ed))
+
+# [0.3.0](https://github.com/arfreelance/monorepo/compare/v0.2.0...v0.3.0) (2022-08-05)
+
+### Features
+
+-   **gulp:** initial commit ([0a32707](https://github.com/arfreelance/monorepo/commit/0a32707fe42456f2ccbd89d345a6dab59f655ceb))
