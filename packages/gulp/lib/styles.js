@@ -8,6 +8,7 @@ const path = require("upath");
 const pkgDir = require("pkg-dir");
 const postcss = require("gulp-postcss");
 const prettier = require("gulp-prettier");
+const purgecss = require("./plugins/purgecss");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass")(compiler);
 const stylelint = require("@ronilaukkarinen/gulp-stylelint");
@@ -92,8 +93,9 @@ module.exports.build = (source, target) => {
 // Minify
 // -----------------------------------------------------------------------------
 
-module.exports.minify = (source, target) => {
+module.exports.minify = (source, target, purgecssOptions) => {
     return src(source)
+        .pipe(purgecss(purgecssOptions))
         .pipe(cleancss(options.cleancss))
         .pipe(rename(options.rename))
         .pipe(dest(target));
