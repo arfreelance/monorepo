@@ -5,6 +5,7 @@ const amp = require("./plugins/amp");
 const data = require("gulp-data");
 const fs = require("fs");
 const gulpif = require("gulp-if");
+const noamp = require("./plugins/noamp");
 const path = require("path");
 const pkgDir = require("pkg-dir");
 const pug = require("gulp-pug");
@@ -12,7 +13,7 @@ const pug = require("gulp-pug");
 // Pug condition
 // -----------------------------------------------------------------------------
 
-const condition = (file) => {
+const isPug = (file) => {
     return file.extname === ".pug";
 };
 
@@ -38,10 +39,10 @@ const options = { basedir, filters };
 // Build
 // -----------------------------------------------------------------------------
 
-module.exports = (source, target) => {
+module.exports = (source, target, isAmp = false) => {
     return src(source)
-        .pipe(gulpif(condition, data(loader)))
-        .pipe(gulpif(condition, pug(options)))
-        .pipe(amp())
+        .pipe(gulpif(isPug, data(loader)))
+        .pipe(gulpif(isPug, pug(options)))
+        .pipe(gulpif(isAmp, amp(), noamp()))
         .pipe(dest(target));
 };

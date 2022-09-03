@@ -15,7 +15,6 @@ const AmpOptimizerModule = "@ampproject/toolbox-optimizer";
 const AmpOptimizerClass = require(AmpOptimizerModule);
 const ampOptimizerPath = require.resolve(AmpOptimizerModule);
 const ampOptimizerDir = dirname(ampOptimizerPath);
-const ampOptimizer = AmpOptimizerClass.create({ maxHeroImageCount: 10 });
 
 // Tree parser
 // -----------------------------------------------------------------------------
@@ -26,27 +25,21 @@ const treeParser = require(treeParserPath);
 // Node utils
 // -----------------------------------------------------------------------------
 
-const { firstChildByTag, hasAttribute } = AmpOptimizerClass.NodeUtils;
+const { firstChildByTag } = AmpOptimizerClass.NodeUtils;
 
 // Minify node
 // -----------------------------------------------------------------------------
 
 const minifyNode = async (node, body) => {
-    if (
-        "attribs" in node.parent &&
-        ("amp-custom" in node.parent.attribs ||
-            "amp-keyframes" in node.parent.attribs)
-    ) {
-        const purgecssOptions = {
-            content: [{ raw: body, extension: "html" }],
-            css: [{ raw: node.data }],
-            safelist: [/^(html|:root)$/, /amp(html)?-/],
-        };
+    const purgecssOptions = {
+        content: [{ raw: body, extension: "html" }],
+        css: [{ raw: node.data }],
+        safelist: [/^(html|:root)$/],
+    };
 
-        const purgecss = new PurgeCSS();
-        const purgecssResult = await purgecss.purge(purgecssOptions);
-        node.data = purgecssResult.shift().css.trim();
-    }
+    const purgecss = new PurgeCSS();
+    const purgecssResult = await purgecss.purge(purgecssOptions);
+    node.data = purgecssResult.shift().css.trim();
 
     const cleancssOptions = {
         returnPromise: true,
@@ -110,25 +103,15 @@ module.exports = () => {
         const body = await firstChildByTag(root, "body");
         const bodyStr = await treeParser.serialize(body);
 
-        if (
-            (await hasAttribute(root, "⚡")) ||
-            (await hasAttribute(root, "amp"))
-        ) {
-            try {
-                const optimizedStr = await ampOptimizer.transformHtml(html);
-                const optimizedObj = await treeParser.parse(optimizedStr);
+        try {
+            const minifiedObj = await processNode(tree, bodyStr);
+            const minifiedStr = await treeParser.serialize(minifiedObj);
 
-                const minifiedObj = await processNode(optimizedObj, bodyStr);
-                const minifiedStr = await treeParser.serialize(minifiedObj);
-
-                file.contents = Buffer.from(minifiedStr);
-                return callback(null, file);
-            } catch (err) {
-                const msg = new PluginError(PLUGIN_NAME, err);
-                return callback(msg);
-            }
-        } else {
+            file.contents = Buffer.from(minifiedStr);
             return callback(null, file);
+        } catch (err) {
+            const msg = new PluginError(PLUGIN_NAME, err);
+            return callback(msg);
         }
     });
 };
