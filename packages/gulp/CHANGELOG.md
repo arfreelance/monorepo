@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/arfreelance/monorepo/compare/v0.18.0...v0.19.0) (2022-09-04)
+
+**Note:** Version bump only for package @arfreelance/gulp
+
 # [0.18.0](https://github.com/arfreelance/monorepo/compare/v0.17.0...v0.18.0) (2022-09-03)
 
 ### Features
