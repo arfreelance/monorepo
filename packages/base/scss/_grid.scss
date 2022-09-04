@@ -5,41 +5,39 @@
 // Container widths
 // -----------------------------------------------------------------------------
 
-@if $enable-grid == true {
-    %container {
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        padding-right: $gutter;
-        padding-left: $gutter;
-    }
+%container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter;
+    padding-left: $gutter;
+}
 
-    .container,
-    .container-fluid {
+.container,
+.container-fluid {
+    @extend %container;
+}
+
+@each $breakpoint, $max-width in $containers {
+    .container-#{$breakpoint} {
         @extend %container;
     }
 
-    @each $breakpoint, $max-width in $containers {
-        .container-#{$breakpoint} {
-            @extend %container;
+    @include superior-to($breakpoint) {
+        $extend-breakpoint: true;
+
+        %responsive-container-#{$breakpoint} {
+            max-width: $max-width;
         }
 
-        @include superior-to($breakpoint) {
-            $extend-breakpoint: true;
+        @each $name, $width in $breakpoints {
+            @if $extend-breakpoint {
+                .container#{infix($name)} {
+                    @extend %responsive-container-#{$breakpoint};
+                }
 
-            %responsive-container-#{$breakpoint} {
-                max-width: $max-width;
-            }
-
-            @each $name, $width in $breakpoints {
-                @if $extend-breakpoint {
-                    .container#{infix($name)} {
-                        @extend %responsive-container-#{$breakpoint};
-                    }
-
-                    @if $breakpoint == $name {
-                        $extend-breakpoint: false;
-                    }
+                @if $breakpoint == $name {
+                    $extend-breakpoint: false;
                 }
             }
         }
@@ -49,13 +47,11 @@
 // Row
 // -----------------------------------------------------------------------------
 
-@if $enable-grid == true {
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -$gutter * 0.5;
-        margin-left: -$gutter * 0.5;
-    }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutter * 0.5;
+    margin-left: -$gutter * 0.5;
 }
 
 // Columns
@@ -68,72 +64,70 @@
     padding-left: $gutter * 0.5;
 }
 
-@if $enable-grid == true {
-    @each $breakpoint in map-keys($breakpoints) {
-        $infix: infix($breakpoint);
+@each $breakpoint in map-keys($breakpoints) {
+    $infix: infix($breakpoint);
 
-        .col#{$infix},
+    .col#{$infix},
+    .col#{$infix}-auto {
+        @extend %grid-column;
+    }
+
+    @if $columns > 0 {
+        @for $i from 1 through $columns {
+            .col#{$infix}-#{$i} {
+                @extend %grid-column;
+            }
+        }
+    }
+
+    @include superior-to($breakpoint) {
+        .col#{$infix} {
+            flex-grow: 1;
+            flex-basis: 0;
+            max-width: 100%;
+        }
+
         .col#{$infix}-auto {
-            @extend %grid-column;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 100%;
         }
 
         @if $columns > 0 {
             @for $i from 1 through $columns {
                 .col#{$infix}-#{$i} {
-                    @extend %grid-column;
+                    $num: math.div($i, $columns);
+                    $val: math.percentage($num);
+
+                    flex: 0 0 $val;
+                    max-width: $val;
+                }
+            }
+
+            @for $i from 0 through ($columns - 1) {
+                @if not($infix == "" and $i == 0) {
+                    .offset#{$infix}-#{$i} {
+                        $num: math.div($i, $columns);
+                        $val: math.percentage($num);
+
+                        margin-left: if($num == 0, 0, $val);
+                    }
                 }
             }
         }
 
-        @include superior-to($breakpoint) {
-            .col#{$infix} {
-                flex-grow: 1;
-                flex-basis: 0;
-                max-width: 100%;
+        @for $i from 0 through $columns {
+            .order#{$infix}-#{$i} {
+                order: $i;
             }
+        }
 
-            .col#{$infix}-auto {
-                flex: 0 0 auto;
-                width: auto;
-                max-width: 100%;
-            }
+        .order#{$infix}-first {
+            order: -1;
+        }
 
-            @if $columns > 0 {
-                @for $i from 1 through $columns {
-                    .col#{$infix}-#{$i} {
-                        $num: math.div($i, $columns);
-                        $val: math.percentage($num);
-
-                        flex: 0 0 $val;
-                        max-width: $val;
-                    }
-                }
-
-                @for $i from 0 through ($columns - 1) {
-                    @if not($infix == "" and $i == 0) {
-                        .offset#{$infix}-#{$i} {
-                            $num: math.div($i, $columns);
-                            $val: math.percentage($num);
-
-                            margin-left: if($num == 0, 0, $val);
-                        }
-                    }
-                }
-            }
-
-            @for $i from 0 through $columns {
-                .order#{$infix}-#{$i} {
-                    order: $i;
-                }
-            }
-
-            .order#{$infix}-first {
-                order: -1;
-            }
-
-            .order#{$infix}-last {
-                order: $columns + 1;
-            }
+        .order#{$infix}-last {
+            order: $columns + 1;
         }
     }
 }
