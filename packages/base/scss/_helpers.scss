@@ -3,63 +3,37 @@
 // Positions
 // -----------------------------------------------------------------------------
 
-.fixed-superior,
-.fixed-inferior {
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: $zindex-fixed;
-}
-
 .fixed-superior {
-    top: 0;
+    @include fixed-superior;
 }
 
 .fixed-inferior {
-    bottom: 0;
+    @include fixed-inferior;
 }
 
 // Stacks
 // -----------------------------------------------------------------------------
 
-.hstack,
-.vstack {
-    display: flex;
-    align-self: stretch;
-}
-
 .hstack {
-    flex-direction: row;
-    align-items: center;
+    @include hstack;
 }
 
 .vstack {
-    flex: 1 1 auto;
-    flex-direction: column;
+    @include vstack;
 }
 
 // Stretched link
 // -----------------------------------------------------------------------------
 
 .stretched-link {
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: $zindex-stretched-link;
-    }
+    @include stretched-link;
 }
 
 // Text truncate
 // -----------------------------------------------------------------------------
 
 .text-truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include text-truncate;
 }
 
 // Visually hidden
@@ -67,13 +41,5 @@
 
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    white-space: nowrap;
+    @include visually-hidden;
 }

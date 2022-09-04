@@ -117,3 +117,86 @@
         }
     }
 }
+
+// Fixed utility
+// -----------------------------------------------------------------------------
+
+@mixin fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+}
+
+@mixin fixed-superior {
+    @include fixed;
+
+    top: 0;
+}
+
+@mixin fixed-inferior {
+    @include fixed;
+
+    bottom: 0;
+}
+
+// Stack utility
+// -----------------------------------------------------------------------------
+
+@mixin stack {
+    display: flex;
+    align-self: stretch;
+}
+
+@mixin hstack {
+    @include stack;
+
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin vstack {
+    @include stack;
+
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+// Stretched link utility
+// -----------------------------------------------------------------------------
+
+@mixin stretched-link {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $zindex-stretched-link;
+    }
+}
+
+// Text truncate utility
+// -----------------------------------------------------------------------------
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Visually hidden utility
+// -----------------------------------------------------------------------------
+
+@mixin visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+}

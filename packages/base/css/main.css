@@ -671,42 +671,42 @@ textarea {
     order: 13;
 }
 
-.fixed-inferior,
 .fixed-superior {
     position: fixed;
+    top: 0;
     right: 0;
     left: 0;
     z-index: 1000;
 }
 
-.fixed-superior {
-    top: 0;
-}
-
 .fixed-inferior {
+    position: fixed;
+    right: 0;
     bottom: 0;
-}
-
-.hstack,
-.vstack {
-    display: -ms-flexbox;
-    display: flex;
-    align-self: stretch;
-    -ms-flex-item-align: stretch;
+    left: 0;
+    z-index: 1000;
 }
 
 .hstack {
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
     align-items: center;
+    align-self: stretch;
     -ms-flex-align: center;
+    -ms-flex-item-align: stretch;
 }
 
 .vstack {
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     -ms-flex-direction: column;
     flex-direction: column;
+    align-self: stretch;
+    -ms-flex-item-align: stretch;
 }
 
 .stretched-link::after {
