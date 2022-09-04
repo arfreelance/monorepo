@@ -21,8 +21,8 @@ const custom = {
         "at-rule-empty-line-before": [
             "always",
             {
-                except: ["first-nested"],
-                ignoreAtRules: ["import", "else", "extend", "use"],
+                except: ["after-same-name", "first-nested"],
+                ignoreAtRules: ["else"],
             },
         ],
         "at-rule-no-vendor-prefix": null,
