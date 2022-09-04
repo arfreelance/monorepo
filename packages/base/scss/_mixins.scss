@@ -1,46 +1,6 @@
 // @argentinafreelance/base
 
 @use "sass:list";
-@use "sass:map";
-
-// Name of the next breakpoint.
-// Null for the last breakpoint.
-// -----------------------------------------------------------------------------
-
-@function breakpoint-next($name) {
-    $names: map.keys($breakpoints);
-    $index: list.index($names, $name);
-
-    @return if($index != null and $index < length($names), nth($names, $index + 1), null);
-}
-
-// Minimum breakpoint width.
-// Null for the smallest (first) breakpoint.
-// -----------------------------------------------------------------------------
-
-@function breakpoint-min($name) {
-    $min: map.get($breakpoints, $name);
-
-    @return if($min != 0, $min, null);
-}
-
-// Maximum breakpoint width.
-// Null for the largest (last) breakpoint.
-// -----------------------------------------------------------------------------
-
-@function breakpoint-max($name) {
-    $next: breakpoint-next($name);
-
-    @return if($next, breakpoint-min($next) - 0.02, null);
-}
-
-// Returns a blank string if smallest breakpoint,
-// otherwise returns the name with a dash in front.
-// -----------------------------------------------------------------------------
-
-@function infix($name) {
-    @return if(breakpoint-min($name) == null, "", "-#{$name}");
-}
 
 // Media of at least the minimum breakpoint width.
 // No query for the smallest breakpoint.
@@ -204,7 +164,7 @@
 // Input & buttons base
 // -----------------------------------------------------------------------------
 
-@mixin input-button(
+@mixin input-button-base(
     $display: $input-button-display,
     $font-weight: $input-button-font-weight,
     $font-family: $input-button-font-family,
@@ -231,10 +191,7 @@
     $font-size: $input-button-font-size,
     $line-height: $input-button-line-height
 ) {
-    $height-text: $font-size * $line-height;
-    $height-padding: list.nth($padding, 1) * 2;
-    $height-border: $border-width * 2;
-    $height: calc($height-text + $height-padding + $height-border);
+    $height: calc($font-size * $line-height + list.nth($padding, 1) * 2 + $border-width * 2);
 
     width: $width;
     height: $height;
@@ -245,46 +202,11 @@
     line-height: $line-height;
 }
 
-@mixin input-button-variant(
-    $border-color,
-    $background-color,
-    $color,
-    $focus-border-color,
-    $focus-background-color,
-    $focus-color,
-    $focus-box-shadow
-) {
-    border-color: $border-color;
-    background-color: $background-color;
-    color: $color;
-
-    &:focus,
-    &:hover {
-        &:not(:disabled) {
-            border-color: $focus-border-color;
-            background-color: $focus-background-color;
-            color: $focus-color;
-            box-shadow: $focus-box-shadow;
-        }
-    }
-}
-
 // Inputs base
 // -----------------------------------------------------------------------------
 
-@mixin input {
+@mixin input-base {
     appearance: none;
-}
-
-@mixin input-size(
-    $width: $input-button-width,
-    $padding: $input-button-padding,
-    $border-width: $input-button-border-width,
-    $border-radius: $input-button-border-radius,
-    $font-size: $input-button-font-size,
-    $line-height: $input-button-line-height
-) {
-    @include input-button-size($width, $height, $padding, $border-width, $border-radius, $font-size, $line-height);
 }
 
 @mixin input-variant(
@@ -296,15 +218,16 @@
     $focus-color: $input-focus-color,
     $focus-box-shadow: $input-focus-box-shadow
 ) {
-    @include input-button-variant(
-        $border-color,
-        $background-color,
-        $color,
-        $focus-border-color,
-        $focus-background-color,
-        $focus-color,
-        $focus-box-shadow
-    );
+    border-color: $border-color;
+    background-color: $background-color;
+    color: $color;
+
+    &:focus:not(:disabled) {
+        border-color: $focus-border-color;
+        background-color: $focus-background-color;
+        color: $focus-color;
+        box-shadow: $focus-box-shadow;
+    }
 }
 
 // Selects base
@@ -312,51 +235,41 @@
 
 @mixin input-select(
     $padding-right: $select-padding-right,
-    $caret-image: $select-caret-image,
-    $caret-position: $select-caret-position,
-    $caret-size: $select-caret-size
+    $caret-background-image: $select-caret-background-image,
+    $caret-background-position: $select-caret-background-position,
+    $caret-background-size: $select-caret-background-size,
+    $multiple-height: $select-multiple-height
 ) {
     &:not([multiple]) {
         padding-right: $padding-right;
-        background-image: $caret-image;
-        background-position: right $caret-position center;
-        background-size: $caret-size;
+        background-image: $caret-background-image;
+        background-position: right $caret-background-position center;
+        background-size: $caret-background-size;
         background-repeat: no-repeat;
         print-color-adjust: exact;
     }
 
     &[multiple] {
-        height: auto;
+        height: $multiple-height;
     }
 }
 
 // Textareas base
 // -----------------------------------------------------------------------------
 
-@mixin input-textarea {
-    height: auto;
+@mixin input-textarea($height: $textarea-height) {
+    height: $height;
 }
 
 // Buttons base
 // -----------------------------------------------------------------------------
 
-@mixin button($white-space: $button-white-space) {
+@mixin button-base($white-space: $button-white-space) {
     vertical-align: middle;
     text-align: center;
     text-decoration: none;
     white-space: $white-space;
     user-select: none;
-}
-
-@mixin button-size(
-    $width: $input-button-width,
-    $padding: $input-button-padding,
-    $border-width: $input-button-border-width,
-    $border-radius: $input-button-border-radius,
-    $font-size: $input-button-font-size,
-    $line-height: $input-button-line-height
-) {
-    @include input-button-size($width, $height, $padding, $border-width, $border-radius, $font-size, $line-height);
 }
 
 @mixin button-variant(
@@ -368,13 +281,109 @@
     $focus-color: $button-focus-color,
     $focus-box-shadow: $button-focus-box-shadow
 ) {
-    @include input-button-variant(
-        $border-color,
-        $background-color,
-        $color,
-        $focus-border-color,
-        $focus-background-color,
-        $focus-color,
-        $focus-box-shadow
-    );
+    border-color: $border-color;
+    background-color: $background-color;
+    color: $color;
+
+    &:hover,
+    &:focus-within {
+        &:not(:disabled) {
+            border-color: $focus-border-color;
+            background-color: $focus-background-color;
+            color: $focus-color;
+            box-shadow: $focus-box-shadow;
+        }
+    }
+}
+
+// Checkboxs and radios
+// -----------------------------------------------------------------------------
+
+@mixin checkbox-radio-base($transition: $checkbox-radio-transition) {
+    display: inline-block;
+    vertical-align: middle;
+    flex: 0 0 auto;
+    padding: 0;
+    background-position: center;
+    background-origin: border-box;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    user-select: none;
+    transition: $transition;
+    appearance: none;
+    print-color-adjust: exact;
+}
+
+@mixin checkbox-radio-size(
+    $width: $checkbox-radio-width,
+    $height: $checkbox-radio-height,
+    $border-width: $checkbox-radio-border-width
+) {
+    width: $width;
+    height: $height;
+    border-width: $border-width;
+}
+
+@mixin checkbox-radio-variant(
+    $border-color: $checkbox-radio-border-color,
+    $background-color: $checkbox-radio-background-color,
+    $checked-border-color: $checkbox-radio-checked-border-color,
+    $checked-background-color: $checkbox-radio-checked-background-color,
+    $focus-box-shadow: $checkbox-radio-focus-box-shadow,
+    $checked-focus-border-color: $checkbox-radio-checked-focus-border-color
+) {
+    border-color: $border-color;
+    background-color: $background-color;
+
+    &:focus {
+        box-shadow: $focus-box-shadow;
+    }
+
+    &:checked {
+        border-color: $checked-border-color;
+        background-color: $checked-background-color;
+
+        &:focus {
+            border-color: $checked-focus-border-color;
+        }
+    }
+}
+
+// Checkboxs
+// -----------------------------------------------------------------------------
+
+@mixin checkbox-base(
+    $border-radius: $checkbox-border-radius,
+    $checked-background-image: $checkbox-checked-background-image,
+    $indeterminate-border-color: $checkbox-indeterminate-border-color,
+    $indeterminate-background-color: $checkbox-indeterminate-background-color,
+    $indeterminate-background-image: $checkbox-indeterminate-background-image,
+    $indeterminate-focus-border-color: $checkbox-indeterminate-focus-border-color
+) {
+    border-radius: $border-radius;
+
+    &:checked {
+        background-image: $checked-background-image;
+    }
+
+    &:indeterminate {
+        border-color: $indeterminate-border-color;
+        background-color: $indeterminate-background-color;
+        background-image: $indeterminate-background-image;
+
+        &:focus {
+            border-color: $indeterminate-focus-border-color;
+        }
+    }
+}
+
+// Radios
+// -----------------------------------------------------------------------------
+
+@mixin radio-base($border-radius: $radio-border-radius, $checked-background-image: $radio-checked-background-image) {
+    border-radius: $border-radius;
+
+    &:checked {
+        background-image: $checked-background-image;
+    }
 }

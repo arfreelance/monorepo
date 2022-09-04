@@ -15,6 +15,7 @@ $spacer: 1rem !default;
 
 $spacers: (
     0: 0,
+
     2: $spacer * 0.125,
     4: $spacer * 0.25,
     6: $spacer * 0.375,
@@ -22,6 +23,16 @@ $spacers: (
     10: $spacer * 0.625,
     12: $spacer * 0.75,
     14: $spacer * 0.875,
+    16: $spacer * 1,
+    18: $spacer * 1.125,
+    20: $spacer * 1.25,
+    22: $spacer * 1.375,
+    24: $spacer * 1.5,
+    26: $spacer * 1.625,
+    28: $spacer * 1.75,
+    30: $spacer * 1.875,
+    32: $spacer * 2,
+
     1x: $spacer * 1,
     2x: $spacer * 2,
     3x: $spacer * 3,
@@ -53,7 +64,6 @@ $breakpoints: (
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    xxl: 1400px,
 ) !default;
 
 // Containers
@@ -64,7 +74,6 @@ $containers: (
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    xxl: 1320px,
 ) !default;
 
 // Columns
@@ -137,7 +146,7 @@ $link-transition: $transition-base !default;
 $placeholder-opacity: 0.5 !default;
 $placeholder-color: inherit !default;
 
-// Inputs & Buttons
+// Inputs & buttons
 // -----------------------------------------------------------------------------
 
 $input-button-display: inline-block !default;
@@ -157,6 +166,9 @@ $input-button-line-height: $body-line-height !default;
 $input-button-disabled-opacity: 0.65 !default;
 $input-button-disabled-cursor: default !default;
 
+$input-button-focus-box-shadow-width: 0.2 !default;
+$input-button-focus-box-shadow-opacity: 0.25 !default;
+
 // Inputs
 // -----------------------------------------------------------------------------
 
@@ -164,27 +176,76 @@ $input-border-color: $body-color !default;
 $input-background-color: $body-background-color !default;
 $input-color: $body-color !default;
 
-$input-focus-border-color: $body-color !default;
-$input-focus-background-color: $body-background-color !default;
-$input-focus-color: $body-color !default;
-$input-focus-box-shadow-width: 0.2rem !default;
+$input-focus-border-color: $input-border-color !default;
+$input-focus-background-color: $input-background-color !default;
+$input-focus-color: $input-color !default;
+$input-focus-box-shadow-width: $input-button-focus-box-shadow-width !default;
 $input-focus-box-shadow-color: $input-focus-border-color !default;
-$input-focus-box-shadow-opacity: 0.25 !default;
+$input-focus-box-shadow-opacity: $input-button-focus-box-shadow-opacity !default;
 $input-focus-box-shadow-color-rgba: rgba($input-focus-box-shadow-color, $input-focus-box-shadow-opacity) !default;
 $input-focus-box-shadow: 0 0 0 $input-focus-box-shadow-width $input-focus-box-shadow-color-rgba !default;
 
 // Selects
 // -----------------------------------------------------------------------------
 
-$select-caret-color: $input-border-color !default;
 $select-caret-width: $input-button-font-size * $input-button-line-height !default;
 $select-caret-height: $input-button-font-size * $input-button-line-height !default;
-$select-caret-size: $select-caret-width $select-caret-height !default;
-$select-caret-position: math.div($select-caret-width, 3) !default;
+$select-caret-background-size: $select-caret-width $select-caret-height !default;
+$select-caret-background-position: math.div($select-caret-width, 3) !default;
 
-$select-caret-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='#{$select-caret-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !default;
+$select-caret-fill-color: $input-border-color !default;
+$select-caret-background-image: get-select-caret-image($select-caret-fill-color) !default;
 
-$select-padding-right: $select-caret-width + ($select-caret-position * 2) !default;
+$select-padding-right: $select-caret-width + ($select-caret-background-position * 2) !default;
+$select-multiple-height: initial !default;
+
+// Textareas
+// -----------------------------------------------------------------------------
+
+$textarea-height: initial !default;
+
+// Checkboxs & radios
+// -----------------------------------------------------------------------------
+
+$checkbox-radio-transition: $input-button-transition !default;
+
+$checkbox-radio-width: 1rem !default;
+$checkbox-radio-height: 1rem !default;
+$checkbox-radio-border-width: $input-button-border-width !default;
+
+$checkbox-radio-border-color: $input-border-color !default;
+$checkbox-radio-background-color: $input-background-color !default;
+
+$checkbox-radio-checked-fill-color: $checkbox-radio-background-color !default;
+$checkbox-radio-checked-border-color: $checkbox-radio-border-color !default;
+$checkbox-radio-checked-background-color: $checkbox-radio-border-color !default;
+
+$checkbox-radio-focus-box-shadow: $input-focus-box-shadow !default;
+$checkbox-radio-checked-focus-border-color: transparent !default;
+
+// Checkboxs
+// -----------------------------------------------------------------------------
+
+$checkbox-border-radius: 0.125rem !default;
+
+$checkbox-checked-background-image: get-checkbox-checked-image($checkbox-radio-checked-fill-color) !default;
+
+$checkbox-indeterminate-border-color: $checkbox-radio-checked-border-color !default;
+$checkbox-indeterminate-background-image: get-checkbox-indeterminate-image($checkbox-radio-checked-fill-color) !default;
+$checkbox-indeterminate-background-opacity: 0.5 !default;
+$checkbox-indeterminate-background-color: rgba(
+    $checkbox-radio-checked-background-color,
+    $checkbox-indeterminate-background-opacity
+) !default;
+
+$checkbox-indeterminate-focus-border-color: $checkbox-radio-checked-focus-border-color !default;
+
+// Radios
+// -----------------------------------------------------------------------------
+
+$radio-border-radius: 100% !default;
+
+$radio-checked-background-image: get-radio-checked-image($checkbox-radio-checked-fill-color) !default;
 
 // Buttons
 // -----------------------------------------------------------------------------
@@ -195,11 +256,11 @@ $button-border-color: $body-color !default;
 $button-background-color: $body-color !default;
 $button-color: $body-background-color !default;
 
-$button-focus-border-color: $body-color !default;
-$button-focus-background-color: $body-color !default;
-$button-focus-color: $body-background-color !default;
-$button-focus-box-shadow-width: $input-focus-box-shadow-width !default;
+$button-focus-border-color: $button-border-color !default;
+$button-focus-background-color: $button-background-color !default;
+$button-focus-color: $button-color !default;
+$button-focus-box-shadow-width: $input-button-focus-box-shadow-width !default;
 $button-focus-box-shadow-color: $button-focus-border-color !default;
-$button-focus-box-shadow-opacity: $input-focus-box-shadow-opacity !default;
+$button-focus-box-shadow-opacity: $input-button-focus-box-shadow-opacity !default;
 $button-focus-box-shadow-color-rgba: rgba($button-focus-box-shadow-color, $button-focus-box-shadow-opacity) !default;
 $button-focus-box-shadow: 0 0 0 $button-focus-box-shadow-width $button-focus-box-shadow-color-rgba !default;

@@ -9,7 +9,8 @@
 // Core
 // -----------------------------------------------------------------------------
 
-@import "vars";
+@import "functions";
+@import "variables";
 @import "mixins";
 
 // Styles
@@ -19,5 +20,5 @@
 @import "grid";
 @import "custom";
 @import "helpers";
-@import "utils";
+@import "utilities";
 @import "icons";
