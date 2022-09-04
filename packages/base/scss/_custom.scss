@@ -1,0 +1,12 @@
+// @argentinafreelance/base
+
+// Buttons
+// -----------------------------------------------------------------------------
+
+.button {
+    @include button;
+
+    @include button-size;
+
+    @include button-variant;
+}

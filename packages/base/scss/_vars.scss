@@ -136,3 +136,38 @@ $link-transition: $transition-base !default;
 
 $placeholder-opacity: 0.5 !default;
 $placeholder-color: inherit !default;
+
+// Buttons
+// -----------------------------------------------------------------------------
+
+$button-display: inline-block !default;
+$button-font-family: $body-font-family !default;
+$button-font-weight: $body-font-weight !default;
+$button-white-space: nowrap !default;
+$button-transition: $transition-base !default;
+
+$button-width: auto !default;
+$button-padding-x: 0.375rem !default;
+$button-padding-y: 0.75rem !default;
+$button-padding: $button-padding-y $button-padding-x !default;
+$button-border-width: 1px !default;
+$button-border-radius: 0.25rem !default;
+$button-font-size: $body-font-size !default;
+$button-line-height: $body-line-height !default;
+
+$button-border-color: $body-color !default;
+$button-background-color: $body-color !default;
+$button-color: $body-background-color !default;
+
+$button-focus-border-color: $body-color !default;
+$button-focus-background-color: $body-color !default;
+$button-focus-color: $body-background-color !default;
+
+$button-focus-box-shadow-width: 0.2rem !default;
+$button-focus-box-shadow-color: $button-focus-border-color !default;
+$button-focus-box-shadow-opacity: 0.25 !default;
+$button-focus-box-shadow-color: rgba($button-focus-box-shadow-color, $button-focus-box-shadow-opacity) !default;
+$button-focus-box-shadow: 0 0 0 $button-focus-box-shadow-width $button-focus-box-shadow-color !default;
+
+$button-disabled-cursor: default !default;
+$button-disabled-opacity: 0.65 !default;
