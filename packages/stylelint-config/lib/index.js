@@ -17,6 +17,10 @@ const custom = {
         "no-empty-source": null,
         "number-max-precision": null,
         "value-keyword-case": null,
+        "comment-empty-line-before": [
+            "always",
+            { ignore: ["after-comment", "stylelint-commands"] },
+        ],
         "rule-empty-line-before": ["always", { except: ["first-nested"] }],
         "at-rule-empty-line-before": [
             "always",
