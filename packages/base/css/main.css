@@ -364,8 +364,8 @@ textarea {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .row {
@@ -373,8 +373,558 @@ textarea {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.gutter-0 > .col,
+.gutter-0 > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.gutter-1 {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.gutter-1 > .col,
+.gutter-1 > [class*="col-"] {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gutter-2 {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-2 > .col,
+.gutter-2 > [class*="col-"] {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.gutter-3 {
     margin-right: -1rem;
     margin-left: -1rem;
+}
+
+.gutter-3 > .col,
+.gutter-3 > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.gutter-4 {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.gutter-4 > .col,
+.gutter-4 > [class*="col-"] {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gutter-5 {
+    margin-right: -2rem;
+    margin-left: -2rem;
+}
+
+.gutter-5 > .col,
+.gutter-5 > [class*="col-"] {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.gutter-6 {
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+}
+
+.gutter-6 > .col,
+.gutter-6 > [class*="col-"] {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.gutter-7 {
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.gutter-7 > .col,
+.gutter-7 > [class*="col-"] {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.gutter-8 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+}
+
+.gutter-8 > .col,
+.gutter-8 > [class*="col-"] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+}
+
+.gutter-9 {
+    margin-right: -4rem;
+    margin-left: -4rem;
+}
+
+.gutter-9 > .col,
+.gutter-9 > [class*="col-"] {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+.gutter-sm-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.gutter-sm-0 > .col,
+.gutter-sm-0 > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.gutter-sm-1 {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.gutter-sm-1 > .col,
+.gutter-sm-1 > [class*="col-"] {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gutter-sm-2 {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-sm-2 > .col,
+.gutter-sm-2 > [class*="col-"] {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.gutter-sm-3 {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.gutter-sm-3 > .col,
+.gutter-sm-3 > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.gutter-sm-4 {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.gutter-sm-4 > .col,
+.gutter-sm-4 > [class*="col-"] {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gutter-sm-5 {
+    margin-right: -2rem;
+    margin-left: -2rem;
+}
+
+.gutter-sm-5 > .col,
+.gutter-sm-5 > [class*="col-"] {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.gutter-sm-6 {
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+}
+
+.gutter-sm-6 > .col,
+.gutter-sm-6 > [class*="col-"] {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.gutter-sm-7 {
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.gutter-sm-7 > .col,
+.gutter-sm-7 > [class*="col-"] {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.gutter-sm-8 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+}
+
+.gutter-sm-8 > .col,
+.gutter-sm-8 > [class*="col-"] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+}
+
+.gutter-sm-9 {
+    margin-right: -4rem;
+    margin-left: -4rem;
+}
+
+.gutter-sm-9 > .col,
+.gutter-sm-9 > [class*="col-"] {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+.gutter-md-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.gutter-md-0 > .col,
+.gutter-md-0 > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.gutter-md-1 {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.gutter-md-1 > .col,
+.gutter-md-1 > [class*="col-"] {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gutter-md-2 {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-md-2 > .col,
+.gutter-md-2 > [class*="col-"] {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.gutter-md-3 {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.gutter-md-3 > .col,
+.gutter-md-3 > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.gutter-md-4 {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.gutter-md-4 > .col,
+.gutter-md-4 > [class*="col-"] {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gutter-md-5 {
+    margin-right: -2rem;
+    margin-left: -2rem;
+}
+
+.gutter-md-5 > .col,
+.gutter-md-5 > [class*="col-"] {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.gutter-md-6 {
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+}
+
+.gutter-md-6 > .col,
+.gutter-md-6 > [class*="col-"] {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.gutter-md-7 {
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.gutter-md-7 > .col,
+.gutter-md-7 > [class*="col-"] {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.gutter-md-8 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+}
+
+.gutter-md-8 > .col,
+.gutter-md-8 > [class*="col-"] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+}
+
+.gutter-md-9 {
+    margin-right: -4rem;
+    margin-left: -4rem;
+}
+
+.gutter-md-9 > .col,
+.gutter-md-9 > [class*="col-"] {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+.gutter-lg-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.gutter-lg-0 > .col,
+.gutter-lg-0 > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.gutter-lg-1 {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.gutter-lg-1 > .col,
+.gutter-lg-1 > [class*="col-"] {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gutter-lg-2 {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-lg-2 > .col,
+.gutter-lg-2 > [class*="col-"] {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.gutter-lg-3 {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.gutter-lg-3 > .col,
+.gutter-lg-3 > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.gutter-lg-4 {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.gutter-lg-4 > .col,
+.gutter-lg-4 > [class*="col-"] {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gutter-lg-5 {
+    margin-right: -2rem;
+    margin-left: -2rem;
+}
+
+.gutter-lg-5 > .col,
+.gutter-lg-5 > [class*="col-"] {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.gutter-lg-6 {
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+}
+
+.gutter-lg-6 > .col,
+.gutter-lg-6 > [class*="col-"] {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.gutter-lg-7 {
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.gutter-lg-7 > .col,
+.gutter-lg-7 > [class*="col-"] {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.gutter-lg-8 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+}
+
+.gutter-lg-8 > .col,
+.gutter-lg-8 > [class*="col-"] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+}
+
+.gutter-lg-9 {
+    margin-right: -4rem;
+    margin-left: -4rem;
+}
+
+.gutter-lg-9 > .col,
+.gutter-lg-9 > [class*="col-"] {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+.gutter-xl-0 {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.gutter-xl-0 > .col,
+.gutter-xl-0 > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.gutter-xl-1 {
+    margin-right: -0.25rem;
+    margin-left: -0.25rem;
+}
+
+.gutter-xl-1 > .col,
+.gutter-xl-1 > [class*="col-"] {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gutter-xl-2 {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.gutter-xl-2 > .col,
+.gutter-xl-2 > [class*="col-"] {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.gutter-xl-3 {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.gutter-xl-3 > .col,
+.gutter-xl-3 > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.gutter-xl-4 {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.gutter-xl-4 > .col,
+.gutter-xl-4 > [class*="col-"] {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.gutter-xl-5 {
+    margin-right: -2rem;
+    margin-left: -2rem;
+}
+
+.gutter-xl-5 > .col,
+.gutter-xl-5 > [class*="col-"] {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.gutter-xl-6 {
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+}
+
+.gutter-xl-6 > .col,
+.gutter-xl-6 > [class*="col-"] {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.gutter-xl-7 {
+    margin-right: -3rem;
+    margin-left: -3rem;
+}
+
+.gutter-xl-7 > .col,
+.gutter-xl-7 > [class*="col-"] {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.gutter-xl-8 {
+    margin-right: -3.5rem;
+    margin-left: -3.5rem;
+}
+
+.gutter-xl-8 > .col,
+.gutter-xl-8 > [class*="col-"] {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+}
+
+.gutter-xl-9 {
+    margin-right: -4rem;
+    margin-left: -4rem;
+}
+
+.gutter-xl-9 > .col,
+.gutter-xl-9 > [class*="col-"] {
+    padding-right: 4rem;
+    padding-left: 4rem;
 }
 
 .col,
@@ -449,8 +999,8 @@ textarea {
 .col-xl-auto {
     position: relative;
     width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 .col {
