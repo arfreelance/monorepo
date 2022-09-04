@@ -201,7 +201,7 @@
     white-space: nowrap;
 }
 
-// Input & Buttons
+// Input & buttons base
 // -----------------------------------------------------------------------------
 
 @mixin input-button(
@@ -225,13 +225,17 @@
 
 @mixin input-button-size(
     $width: $input-button-width,
-    $height: $input-button-height,
     $padding: $input-button-padding,
     $border-width: $input-button-border-width,
     $border-radius: $input-button-border-radius,
     $font-size: $input-button-font-size,
     $line-height: $input-button-line-height
 ) {
+    $height-text: $font-size * $line-height;
+    $height-padding: list.nth($padding, 1) * 2;
+    $height-border: $border-width * 2;
+    $height: calc($height-text + $height-padding + $height-border);
+
     width: $width;
     height: $height;
     padding: $padding;
@@ -265,11 +269,22 @@
     }
 }
 
-// Inputs
+// Inputs base
 // -----------------------------------------------------------------------------
 
 @mixin input {
     appearance: none;
+}
+
+@mixin input-size(
+    $width: $input-button-width,
+    $padding: $input-button-padding,
+    $border-width: $input-button-border-width,
+    $border-radius: $input-button-border-radius,
+    $font-size: $input-button-font-size,
+    $line-height: $input-button-line-height
+) {
+    @include input-button-size($width, $height, $padding, $border-width, $border-radius, $font-size, $line-height);
 }
 
 @mixin input-variant(
@@ -292,7 +307,7 @@
     );
 }
 
-// Selects
+// Selects base
 // -----------------------------------------------------------------------------
 
 @mixin input-select(
@@ -315,14 +330,14 @@
     }
 }
 
-// Textareas
+// Textareas base
 // -----------------------------------------------------------------------------
 
 @mixin input-textarea {
     height: auto;
 }
 
-// Buttons
+// Buttons base
 // -----------------------------------------------------------------------------
 
 @mixin button($white-space: $button-white-space) {
@@ -331,6 +346,17 @@
     text-decoration: none;
     white-space: $white-space;
     user-select: none;
+}
+
+@mixin button-size(
+    $width: $input-button-width,
+    $padding: $input-button-padding,
+    $border-width: $input-button-border-width,
+    $border-radius: $input-button-border-radius,
+    $font-size: $input-button-font-size,
+    $line-height: $input-button-line-height
+) {
+    @include input-button-size($width, $height, $padding, $border-width, $border-radius, $font-size, $line-height);
 }
 
 @mixin button-variant(

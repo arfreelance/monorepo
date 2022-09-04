@@ -680,8 +680,8 @@ textarea {
 .textarea {
     display: inline-block;
     width: auto;
-    height: calc(1.75rem + 2px);
-    padding: 0.375rem 0.75rem;
+    height: calc(2rem + 2px);
+    padding: 0.5rem 1rem;
     border-width: 1px;
     border-radius: 0.25rem;
     font-size: 1rem;
