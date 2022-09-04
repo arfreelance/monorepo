@@ -27,7 +27,7 @@ const autoprefixer = {
 };
 
 const cssnano = {
-    preset: ["default", { colormin: false, mergeRules: false }],
+    preset: ["default", { calc: false, colormin: false, mergeRules: false }],
 };
 
 const options = {
