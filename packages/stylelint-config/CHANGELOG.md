@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/arfreelance/monorepo/compare/v0.20.0...v0.21.0) (2022-09-04)
+
+### Features
+
+-   **stylelint-config:** add rule-empty-line-before rule ([ecc4da5](https://github.com/arfreelance/monorepo/commit/ecc4da5dab64d6aa0ca456d350a1c61b3d7804dc))
+
 # [0.20.0](https://github.com/arfreelance/monorepo/compare/v0.19.0...v0.20.0) (2022-09-04)
 
 ### Features
