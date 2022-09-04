@@ -21,7 +21,7 @@ const custom = {
         "at-rule-empty-line-before": [
             "always",
             {
-                except: ["after-same-name", "first-nested"],
+                except: ["blockless-after-blockless", "first-nested"],
                 ignoreAtRules: ["else"],
             },
         ],
