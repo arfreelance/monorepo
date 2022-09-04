@@ -1,12 +1,59 @@
 // @argentinafreelance/base
 
+// Input & Buttons
+// -----------------------------------------------------------------------------
+
+%input-button {
+    @include input-button;
+    @include input-button-size;
+}
+
 // Buttons
 // -----------------------------------------------------------------------------
 
-.button {
+%button {
+    @extend %input-button;
     @include button;
-
-    @include button-size;
-
     @include button-variant;
+}
+
+.button {
+    @extend %button;
+}
+
+// Inputs
+// -----------------------------------------------------------------------------
+
+%input {
+    @extend %input-button;
+    @include input;
+    @include input-variant;
+}
+
+.input {
+    @extend %input;
+}
+
+// Selects
+// -----------------------------------------------------------------------------
+
+%select {
+    @extend %input;
+    @include input-select;
+}
+
+.select {
+    @extend %select;
+}
+
+// Textareas
+// -----------------------------------------------------------------------------
+
+%textarea {
+    @extend %input;
+    @include input-textarea;
+}
+
+.textarea {
+    @extend %textarea;
 }

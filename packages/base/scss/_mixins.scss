@@ -201,26 +201,20 @@
     white-space: nowrap;
 }
 
-// Buttons
+// Input & Buttons
 // -----------------------------------------------------------------------------
 
-@mixin button(
-    $display: $button-display,
-    $font-family: $button-font-family,
-    $font-weight: $button-font-weight,
-    $white-space: $button-white-space,
-    $transition: $button-transition,
-    $disabled-cursor: $button-disabled-cursor,
-    $disabled-opacity: $button-disabled-opacity
+@mixin input-button(
+    $display: $input-button-display,
+    $font-weight: $input-button-font-weight,
+    $font-family: $input-button-font-family,
+    $transition: $input-button-transition,
+    $disabled-opacity: $input-button-disabled-opacity,
+    $disabled-cursor: $input-button-disabled-cursor
 ) {
     display: $display;
-    vertical-align: middle;
     font-weight: $font-weight;
     font-family: $font-family;
-    text-align: center;
-    text-decoration: none;
-    white-space: $white-space;
-    user-select: none;
     transition: $transition;
 
     &:disabled {
@@ -229,15 +223,17 @@
     }
 }
 
-@mixin button-size(
-    $width: $button-width,
-    $padding: $button-padding,
-    $border-width: $button-border-width,
-    $border-radius: $button-border-radius,
-    $font-size: $button-font-size,
-    $line-height: $button-line-height
+@mixin input-button-size(
+    $width: $input-button-width,
+    $height: $input-button-height,
+    $padding: $input-button-padding,
+    $border-width: $input-button-border-width,
+    $border-radius: $input-button-border-radius,
+    $font-size: $input-button-font-size,
+    $line-height: $input-button-line-height
 ) {
     width: $width;
+    height: $height;
     padding: $padding;
     border-width: $border-width;
     border-radius: $border-radius;
@@ -245,14 +241,14 @@
     line-height: $line-height;
 }
 
-@mixin button-variant(
-    $border-color: $button-border-color,
-    $background-color: $button-background-color,
-    $color: $button-color,
-    $focus-border-color: $button-focus-border-color,
-    $focus-background-color: $button-focus-background-color,
-    $focus-color: $button-focus-color,
-    $focus-box-shadow: $button-focus-box-shadow
+@mixin input-button-variant(
+    $border-color,
+    $background-color,
+    $color,
+    $focus-border-color,
+    $focus-background-color,
+    $focus-color,
+    $focus-box-shadow
 ) {
     border-color: $border-color;
     background-color: $background-color;
@@ -267,4 +263,92 @@
             box-shadow: $focus-box-shadow;
         }
     }
+}
+
+// Inputs
+// -----------------------------------------------------------------------------
+
+@mixin input {
+    appearance: none;
+}
+
+@mixin input-variant(
+    $border-color: $input-border-color,
+    $background-color: $input-background-color,
+    $color: $input-color,
+    $focus-border-color: $input-focus-border-color,
+    $focus-background-color: $input-focus-background-color,
+    $focus-color: $input-focus-color,
+    $focus-box-shadow: $input-focus-box-shadow
+) {
+    @include input-button-variant(
+        $border-color,
+        $background-color,
+        $color,
+        $focus-border-color,
+        $focus-background-color,
+        $focus-color,
+        $focus-box-shadow
+    );
+}
+
+// Selects
+// -----------------------------------------------------------------------------
+
+@mixin input-select(
+    $padding-right: $select-padding-right,
+    $caret-image: $select-caret-image,
+    $caret-position: $select-caret-position,
+    $caret-size: $select-caret-size
+) {
+    &:not([multiple]) {
+        padding-right: $padding-right;
+        background-image: $caret-image;
+        background-position: right $caret-position center;
+        background-size: $caret-size;
+        background-repeat: no-repeat;
+        print-color-adjust: exact;
+    }
+
+    &[multiple] {
+        height: auto;
+    }
+}
+
+// Textareas
+// -----------------------------------------------------------------------------
+
+@mixin input-textarea {
+    height: auto;
+}
+
+// Buttons
+// -----------------------------------------------------------------------------
+
+@mixin button($white-space: $button-white-space) {
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    white-space: $white-space;
+    user-select: none;
+}
+
+@mixin button-variant(
+    $border-color: $button-border-color,
+    $background-color: $button-background-color,
+    $color: $button-color,
+    $focus-border-color: $button-focus-border-color,
+    $focus-background-color: $button-focus-background-color,
+    $focus-color: $button-focus-color,
+    $focus-box-shadow: $button-focus-box-shadow
+) {
+    @include input-button-variant(
+        $border-color,
+        $background-color,
+        $color,
+        $focus-border-color,
+        $focus-background-color,
+        $focus-color,
+        $focus-box-shadow
+    );
 }
