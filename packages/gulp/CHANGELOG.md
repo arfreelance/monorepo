@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/arfreelance/monorepo/compare/v0.23.0...v0.24.0) (2022-09-05)
+
+### Features
+
+-   **gulp:** improve purgecss ([a7c4971](https://github.com/arfreelance/monorepo/commit/a7c4971174f5dee568120a11468574f6dafc40d0))
+
 # [0.23.0](https://github.com/arfreelance/monorepo/compare/v0.22.0...v0.23.0) (2022-09-04)
 
 **Note:** Version bump only for package @arfreelance/gulp
