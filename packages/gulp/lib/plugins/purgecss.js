@@ -3,6 +3,7 @@
 const PLUGIN_NAME = "gulp-purgecss";
 
 const { PurgeCSS } = require("purgecss");
+const extractors = require("./extractors");
 const PluginError = require("plugin-error");
 const through = require("through2");
 
@@ -21,11 +22,15 @@ module.exports = (options) => {
             return callback(msg);
         }
 
-        options.css = [{ raw: file.contents.toString() }];
+        const cssExternal = options.css || [];
+        const cssInternal = [{ raw: file.contents.toString() }];
+        const css = [...cssExternal, ...cssInternal];
+
+        const config = { ...options, css, extractors };
 
         try {
             const purgecss = new PurgeCSS();
-            const result = await purgecss.purge(options);
+            const result = await purgecss.purge(config);
             const content = result.shift().css.trim();
 
             file.contents = Buffer.from(content);

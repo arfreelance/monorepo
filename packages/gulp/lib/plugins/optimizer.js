@@ -5,6 +5,7 @@ const PLUGIN_NAME = "gulp-optimizer";
 const { dirname, resolve } = require("path");
 const { PurgeCSS } = require("purgecss");
 const CleanCSS = require("clean-css");
+const extractors = require("./extractors");
 const PluginError = require("plugin-error");
 const through = require("through2");
 
@@ -31,25 +32,15 @@ const { firstChildByTag, hasAttribute } = AmpOptimizerClass.NodeUtils;
 // Minify node
 // -----------------------------------------------------------------------------
 
-const minifyNode = async (node, body, isAmp) => {
+const minifyNode = async (node, options) => {
     if (
-        !isAmp ||
+        !options.isAmp ||
         ("attribs" in node.parent &&
             ("amp-custom" in node.parent.attribs ||
                 "amp-keyframes" in node.parent.attribs))
     ) {
-        const purgecssOptions = {
-            content: [{ raw: body, extension: "html" }],
-            css: [{ raw: node.data }],
-            safelist: [/^(html|:root)$/],
-        };
-
-        if (isAmp) {
-            purgecssOptions.safelist.push(/amp(html)?-/);
-        }
-
         const purgecss = new PurgeCSS();
-        const purgecssResult = await purgecss.purge(purgecssOptions);
+        const purgecssResult = await purgecss.purge(options.purge);
         node.data = purgecssResult.shift().css.trim();
     }
 
@@ -80,13 +71,13 @@ const minifyNode = async (node, body, isAmp) => {
 // Process node
 // -----------------------------------------------------------------------------
 
-const processNode = async (node, body, isAmp) => {
+const processNode = async (node, options) => {
     if (node.children && Array.isArray(node.children) && node.children.length) {
         node.children = await Promise.all(
             node.children.map(async (subnode) => {
                 return node.type === "style"
-                    ? await minifyNode(subnode, body, isAmp)
-                    : await processNode(subnode, body, isAmp);
+                    ? await minifyNode(subnode, options)
+                    : await processNode(subnode, options);
             })
         );
 
@@ -101,7 +92,7 @@ const processNode = async (node, body, isAmp) => {
 // Exports
 // -----------------------------------------------------------------------------
 
-module.exports = () => {
+module.exports = (purgeOpts) => {
     return through.obj(async (file, encoding, callback) => {
         if (file.isNull()) {
             return callback(null, file);
@@ -122,20 +113,37 @@ module.exports = () => {
         const bodyObj = await firstChildByTag(htmlObj, "body");
         const bodyStr = await treeParser.serialize(bodyObj);
 
+        purgeOpts = purgeOpts || {};
+
         const isAmp =
             (await hasAttribute(htmlObj, "⚡")) ||
             (await hasAttribute(htmlObj, "amp"));
+
+        const extension = file.path.split(".").pop();
+
+        const contentExternal = purgeOpts.content || [];
+        const contentInternal = [{ raw: bodyStr, extension }];
+        const content = [...contentExternal, ...contentInternal];
+
+        const safelistExternal = purgeOpts.safelist || [];
+        const safelistInternal = [/^(html|:root)$/, /amp(html)?-/];
+        const safelist = [...safelistExternal, ...safelistInternal];
+
+        const options = {
+            isAmp,
+            purge: { ...purgeOpts, content, safelist, extractors },
+        };
 
         try {
             let str = htmlStr;
             let obj = docObj;
 
-            if (isAmp) {
+            if (options.isAmp) {
                 str = await ampOptimizer.transformHtml(str);
                 obj = await treeParser.parse(str);
             }
 
-            obj = await processNode(obj, bodyStr, isAmp);
+            obj = await processNode(obj, options);
             str = await treeParser.serialize(obj);
 
             file.contents = Buffer.from(str);

@@ -38,10 +38,10 @@ const options = { basedir, filters };
 // Build
 // -----------------------------------------------------------------------------
 
-module.exports = (source, target) => {
+module.exports = (source, target, purgeOpts) => {
     return src(source)
         .pipe(gulpif(isPug, data(loader)))
         .pipe(gulpif(isPug, pug(options)))
-        .pipe(optimizer())
+        .pipe(optimizer(purgeOpts))
         .pipe(dest(target));
 };

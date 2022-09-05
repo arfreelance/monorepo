@@ -93,9 +93,9 @@ module.exports.build = (source, target) => {
 // Minify
 // -----------------------------------------------------------------------------
 
-module.exports.minify = (source, target, purgecssOptions) => {
+module.exports.minify = (source, target, purgeOpts) => {
     return src(source)
-        .pipe(purgecss(purgecssOptions))
+        .pipe(purgecss(purgeOpts))
         .pipe(cleancss(options.cleancss))
         .pipe(rename(options.rename))
         .pipe(dest(target));
