@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "license": "ISC",
-    "author": "Lucas Banegas <conobanegas@gmail.com>",
+    "author": "Lucas Banegas <lucas@argentinafreelance.com>",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo#readme",
     "repository": "https://github.com/arfreelance/monorepo.git",
