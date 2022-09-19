@@ -21,9 +21,10 @@ program
 // -----------------------------------------------------------------------------
 
 async function run() {
-    program.argument("<globs...>", "files to lint").action(async (globs) => {
-        globs = globs || ["**/*.{css,js,json,md,scss}", ".firebaserc"];
-        await lint(globs);
+    const defaults = ["**/*.{css,js,json,md,scss}", ".firebaserc"];
+
+    program.argument("[globs...]", "files to lint").action(async (globs) => {
+        await lint(globs.length ? globs : defaults);
     });
 
     await program.parseAsync(process.argv);
