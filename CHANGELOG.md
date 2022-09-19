@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/arfreelance/monorepo/compare/v0.25.0...v0.26.0) (2022-09-19)
+
+### Features
+
+-   **gulp:** add pkglint process ([4774748](https://github.com/arfreelance/monorepo/commit/47747480a45f17f790c814bbe3ca47559c287ab7))
+-   **package-lint:** initial run process ([88ebadb](https://github.com/arfreelance/monorepo/commit/88ebadb4146c78cbf9ac45f75e66d9ce8b8a3a55))
+
 # [0.25.0](https://github.com/arfreelance/monorepo/compare/v0.24.0...v0.25.0) (2022-09-18)
 
 ### Features
