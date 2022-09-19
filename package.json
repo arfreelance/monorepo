@@ -2,12 +2,20 @@
     "name": "@arfreelance/monorepo",
     "version": "0.0.0",
     "private": true,
-    "license": "ISC",
-    "author": "Lucas Banegas <lucas@argentinafreelance.com>",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo#readme",
-    "repository": "https://github.com/arfreelance/monorepo.git",
-    "bugs": "https://github.com/arfreelance/monorepo/issues",
+    "bugs": {
+        "url": "https://github.com/arfreelance/monorepo/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arfreelance/monorepo.git"
+    },
+    "license": "ISC",
+    "author": {
+        "name": "Lucas Banegas",
+        "email": "lucas@argentinafreelance.com"
+    },
     "scripts": {
         "prepare": "husky install",
         "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",
@@ -15,6 +23,32 @@
         "test:stylelint": "stylelint --allow-empty-input --color --fix **/*.{css,scss}",
         "test:parallel": "run-p test:eslint test:stylelint",
         "test": "run-s test:prettier test:parallel"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "*.{css,scss}": [
+            "prettier --color --loglevel error --write",
+            "stylelint --allow-empty-input --color --fix"
+        ],
+        "*.js": [
+            "prettier --color --loglevel error --write",
+            "eslint --color --exit-on-fatal-error --fix"
+        ],
+        "*.md": [
+            "prettier --color --loglevel error --write"
+        ],
+        "!(package).json": [
+            "prettier --color --loglevel error --write"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     },
     "devDependencies": {
         "@arfreelance/eslint-config": "^0.24.0",
@@ -31,28 +65,5 @@
         "npm-run-all": "^4.1.5",
         "prettier": "^2.7.1",
         "stylelint": "^14.9.1"
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ]
-    },
-    "lint-staged": {
-        "*.{css,scss}": [
-            "prettier --color --loglevel error --write",
-            "stylelint --allow-empty-input --color --fix"
-        ],
-        "*.js": [
-            "prettier --color --loglevel error --write",
-            "eslint --color --exit-on-fatal-error --fix"
-        ],
-        "*.{json,md}": [
-            "prettier --color --loglevel error --write"
-        ]
     }
 }

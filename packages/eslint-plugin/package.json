@@ -1,16 +1,21 @@
 {
     "name": "@arfreelance/eslint-plugin",
     "version": "0.25.0",
-    "license": "ISC",
-    "author": "Lucas Banegas <lucas@argentinafreelance.com>",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo/tree/main/packages/eslint-plugin#readme",
-    "repository": "https://github.com/arfreelance/monorepo.git",
-    "bugs": "https://github.com/arfreelance/monorepo/issues",
-    "main": "lib/index.js",
-    "publishConfig": {
-        "access": "public"
+    "bugs": {
+        "url": "https://github.com/arfreelance/monorepo/issues"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arfreelance/monorepo.git"
+    },
+    "license": "ISC",
+    "author": {
+        "name": "Lucas Banegas",
+        "email": "lucas@argentinafreelance.com"
+    },
+    "main": "lib/index.js",
     "dependencies": {
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-n": "^15.2.3",
@@ -19,5 +24,8 @@
     },
     "peerDependencies": {
         "eslint": "^8.19.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
