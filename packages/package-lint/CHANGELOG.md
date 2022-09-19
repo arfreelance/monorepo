@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.1](https://github.com/arfreelance/monorepo/compare/v0.26.0...v0.26.1) (2022-09-19)
+
+### Bug Fixes
+
+-   **package-lint:** mark as executable ([52746b8](https://github.com/arfreelance/monorepo/commit/52746b88d558b61fb3eb371ed07cb22098b52865))
+
 # [0.26.0](https://github.com/arfreelance/monorepo/compare/v0.25.0...v0.26.0) (2022-09-19)
 
 ### Features
