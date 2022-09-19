@@ -7,22 +7,21 @@
     "bugs": {
         "url": "https://github.com/arfreelance/monorepo/issues"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/arfreelance/monorepo.git"
-    },
     "license": "ISC",
+    "repository": "git+https://github.com/arfreelance/monorepo.git",
     "author": {
         "name": "Lucas Banegas",
         "email": "lucas@argentinafreelance.com"
     },
     "scripts": {
         "prepare": "husky install",
+        "test:package": "package-lint **/package.json",
+        "test:prettier": "prettier --color --ignore-unknown --loglevel error --no-error-on-unmatched-pattern --write **/*.{css,js,json,md,scss} !**/package.json",
         "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",
-        "test:prettier": "prettier --color --ignore-unknown --loglevel error --no-error-on-unmatched-pattern --write **/*.{css,js,json,md,scss}",
         "test:stylelint": "stylelint --allow-empty-input --color --fix **/*.{css,scss}",
-        "test:parallel": "run-p test:eslint test:stylelint",
-        "test": "run-s test:prettier test:parallel"
+        "test:format": "run-p test:package test:prettier",
+        "test:lint": "run-p test:eslint test:stylelint",
+        "test": "run-s test:format test:lint"
     },
     "commitlint": {
         "extends": [
@@ -51,10 +50,11 @@
         }
     },
     "devDependencies": {
-        "@arfreelance/eslint-config": "^0.24.0",
-        "@arfreelance/eslint-plugin": "^0.24.0",
-        "@arfreelance/stylelint-config": "^0.24.0",
-        "@arfreelance/stylelint-plugin": "^0.24.0",
+        "@arfreelance/eslint-config": "^0.26.0",
+        "@arfreelance/eslint-plugin": "^0.26.0",
+        "@arfreelance/package-lint": "^0.26.0",
+        "@arfreelance/stylelint-config": "^0.26.0",
+        "@arfreelance/stylelint-plugin": "^0.26.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",

@@ -1,3 +1,5 @@
+#!/usr/bin/env
+
 const { Command } = require("commander");
 const { pkglint } = require("@arfreelance/gulp");
 const pkg = require("../package.json");
