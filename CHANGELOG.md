@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/arfreelance/monorepo/compare/v0.26.2...v0.27.0) (2022-09-19)
+
+### Bug Fixes
+
+-   **package-lint:** change main file ([5025210](https://github.com/arfreelance/monorepo/commit/5025210da18265cfcf939101cfb2bf9c8b8e72f4))
+
+### Features
+
+-   **package-lint:** allow empty match globs ([377ac8c](https://github.com/arfreelance/monorepo/commit/377ac8cd225344a0bf89c0ed80c3ecc4b4faaa01))
+-   **package-lint:** improve program ([26f0a8f](https://github.com/arfreelance/monorepo/commit/26f0a8f564072db06e95b6041646b232931153bb))
+
 ## [0.26.2](https://github.com/arfreelance/monorepo/compare/v0.26.1...v0.26.2) (2022-09-19)
 
 ### Bug Fixes
