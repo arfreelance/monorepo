@@ -28,13 +28,41 @@ module.exports = () => {
             return callback(msg);
         }
 
-        const json = file.contents.toString();
-        const data = JSON.parse(json);
+        let data;
 
-        const normalized = normalize(data);
-        const sorted = sort(normalized);
+        try {
+            data = file.contents.toString();
+            data = JSON.parse(data);
+        } catch (error) {
+            return callback(error);
+        }
 
-        file.contents = Buffer.from(sorted);
+        try {
+            normalize(data);
+        } catch (error) {
+            return callback(error);
+        }
+
+        try {
+            normalize(data);
+
+            ["_id", "readme"].forEach((field) => {
+                if (field in data) {
+                    delete data[field];
+                }
+            });
+        } catch (error) {
+            return callback(error);
+        }
+
+        try {
+            data = sort(data);
+            data = JSON.stringify(data);
+        } catch (error) {
+            return callback(error);
+        }
+
+        file.contents = Buffer.from(data);
         return callback(null, file);
     });
 };
