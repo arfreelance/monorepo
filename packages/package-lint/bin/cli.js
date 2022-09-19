@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { Command } = require("commander");
-const { pkglint } = require("@arfreelance/gulp");
+const lint = require("./lib/index");
 const pkg = require("../package.json");
 
 // Initialize program
@@ -22,8 +22,8 @@ program
 
 async function run() {
     program.argument("<globs...>", "files to lint").action(async (globs) => {
-        globs = globs.concat(["!**/node_modules/**/*"]);
-        await pkglint(globs);
+        globs = globs || ["**/*.{css,html,js,json,md,scss}", ".firebaserc"];
+        await lint(globs);
     });
 
     await program.parseAsync(process.argv);
