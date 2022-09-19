@@ -1,17 +1,28 @@
 {
     "name": "@arfreelance/package-lint",
     "version": "0.25.0",
-    "license": "ISC",
-    "author": "Lucas Banegas <lucas@argentinafreelance.com>",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo/tree/main/packages/package-lint#readme",
-    "repository": "https://github.com/arfreelance/monorepo.git",
-    "bugs": "https://github.com/arfreelance/monorepo/issues",
+    "bugs": {
+        "url": "https://github.com/arfreelance/monorepo/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arfreelance/monorepo.git"
+    },
+    "license": "ISC",
+    "author": {
+        "name": "Lucas Banegas",
+        "email": "lucas@argentinafreelance.com"
+    },
     "main": "lib/index.js",
-    "publishConfig": {
-        "access": "public"
+    "bin": {
+        "package-lint": "lib/index.js"
     },
     "dependencies": {
-        "yeoman-generator": "^5.7.0"
+        "@arfreelance/gulp": "^0.25.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
