@@ -15,7 +15,7 @@
         "name": "Lucas Banegas",
         "email": "lucas@argentinafreelance.com"
     },
-    "main": "bin/cli.js",
+    "main": "lib/index.js",
     "bin": {
         "arfreelance-lint": "bin/cli.js"
     },
