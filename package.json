@@ -18,7 +18,7 @@
     },
     "scripts": {
         "prepare": "husky install",
-        "test": "arfreelance-lint **/*.{css,js,json,md,scss}"
+        "test": "arfreelance-lint"
     },
     "commitlint": {
         "extends": [
@@ -34,11 +34,11 @@
         }
     },
     "devDependencies": {
-        "@arfreelance/eslint-config": "^0.27.0",
-        "@arfreelance/eslint-plugin": "^0.27.0",
-        "@arfreelance/package-lint": "^0.27.1",
-        "@arfreelance/stylelint-config": "^0.27.0",
-        "@arfreelance/stylelint-plugin": "^0.27.0",
+        "@arfreelance/eslint-config": "^0.28.0",
+        "@arfreelance/eslint-plugin": "^0.28.0",
+        "@arfreelance/package-lint": "^0.28.0",
+        "@arfreelance/stylelint-config": "^0.28.0",
+        "@arfreelance/stylelint-plugin": "^0.28.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",
