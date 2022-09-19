@@ -7,8 +7,11 @@
     "bugs": {
         "url": "https://github.com/arfreelance/monorepo/issues"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arfreelance/monorepo.git"
+    },
     "license": "ISC",
-    "repository": "git+https://github.com/arfreelance/monorepo.git",
     "author": {
         "name": "Lucas Banegas",
         "email": "lucas@argentinafreelance.com"
@@ -42,6 +45,9 @@
         ],
         "!(package).json": [
             "prettier --color --loglevel error --write"
+        ],
+        "package.json": [
+            "package-lint"
         ]
     },
     "config": {
@@ -52,7 +58,7 @@
     "devDependencies": {
         "@arfreelance/eslint-config": "^0.26.0",
         "@arfreelance/eslint-plugin": "^0.26.0",
-        "@arfreelance/package-lint": "^0.26.0",
+        "@arfreelance/package-lint": "^0.26.2",
         "@arfreelance/stylelint-config": "^0.26.0",
         "@arfreelance/stylelint-plugin": "^0.26.0",
         "@commitlint/cli": "^17.0.3",
