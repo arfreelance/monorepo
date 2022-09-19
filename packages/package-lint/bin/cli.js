@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env node
 
 const { Command } = require("commander");
 const { pkglint } = require("@arfreelance/gulp");

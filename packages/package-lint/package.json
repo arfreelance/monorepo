@@ -15,9 +15,9 @@
         "name": "Lucas Banegas",
         "email": "lucas@argentinafreelance.com"
     },
-    "main": "lib/index.js",
+    "main": "bin/cli.js",
     "bin": {
-        "package-lint": "lib/index.js"
+        "package-lint": "bin/cli.js"
     },
     "dependencies": {
         "@arfreelance/gulp": "^0.26.0"
