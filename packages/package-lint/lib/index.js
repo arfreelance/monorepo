@@ -55,7 +55,7 @@ const options = {
 // -----------------------------------------------------------------------------
 
 module.exports = (globs) => {
-    const opts = { base: "./", dot: true };
+    const opts = { allowEmpty: true, base: "./", dot: true };
 
     globs = globs.concat(ignore);
     globs = [...new Set(globs)];
