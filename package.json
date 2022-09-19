@@ -18,13 +18,7 @@
     },
     "scripts": {
         "prepare": "husky install",
-        "test:package": "package-lint **/package.json",
-        "test:prettier": "prettier --color --ignore-unknown --loglevel error --no-error-on-unmatched-pattern --write **/*.{css,js,json,md,scss} !**/package.json",
-        "test:eslint": "eslint --color --exit-on-fatal-error --fix --no-error-on-unmatched-pattern **/*.js",
-        "test:stylelint": "stylelint --allow-empty-input --color --fix **/*.{css,scss}",
-        "test:format": "run-p test:package test:prettier",
-        "test:lint": "run-p test:eslint test:stylelint",
-        "test": "run-s test:format test:lint"
+        "test": "arfreelance-lint **/*.{css,js,json,md,scss}"
     },
     "commitlint": {
         "extends": [
@@ -32,23 +26,7 @@
         ]
     },
     "lint-staged": {
-        "*.{css,scss}": [
-            "prettier --color --loglevel error --write",
-            "stylelint --allow-empty-input --color --fix"
-        ],
-        "*.js": [
-            "prettier --color --loglevel error --write",
-            "eslint --color --exit-on-fatal-error --fix"
-        ],
-        "*.md": [
-            "prettier --color --loglevel error --write"
-        ],
-        "!(package).json": [
-            "prettier --color --loglevel error --write"
-        ],
-        "package.json": [
-            "package-lint"
-        ]
+        "*.{css,js,json,md,scss}": "arfreelance-lint"
     },
     "config": {
         "commitizen": {
@@ -56,11 +34,11 @@
         }
     },
     "devDependencies": {
-        "@arfreelance/eslint-config": "^0.26.0",
-        "@arfreelance/eslint-plugin": "^0.26.0",
-        "@arfreelance/package-lint": "^0.26.2",
-        "@arfreelance/stylelint-config": "^0.26.0",
-        "@arfreelance/stylelint-plugin": "^0.26.0",
+        "@arfreelance/eslint-config": "^0.27.0",
+        "@arfreelance/eslint-plugin": "^0.27.0",
+        "@arfreelance/package-lint": "^0.27.1",
+        "@arfreelance/stylelint-config": "^0.27.0",
+        "@arfreelance/stylelint-plugin": "^0.27.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",
