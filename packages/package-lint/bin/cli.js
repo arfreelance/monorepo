@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { Command } = require("commander");
-const lint = require("./lib/index");
+const lint = require("../lib/index");
 const pkg = require("../package.json");
 
 // Initialize program
@@ -22,7 +22,7 @@ program
 
 async function run() {
     program.argument("<globs...>", "files to lint").action(async (globs) => {
-        globs = globs || ["**/*.{css,html,js,json,md,scss}", ".firebaserc"];
+        globs = globs || ["**/*.{css,js,json,md,scss}", ".firebaserc"];
         await lint(globs);
     });
 
