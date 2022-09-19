@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/arfreelance/monorepo/compare/v0.27.1...v0.28.0) (2022-09-19)
+
+### Features
+
+-   **package-lint:** make globs optional ([4d06a95](https://github.com/arfreelance/monorepo/commit/4d06a95e7da5f8b61ed0de397495fc3434e8c38d))
+
 ## [0.27.1](https://github.com/arfreelance/monorepo/compare/v0.27.0...v0.27.1) (2022-09-19)
 
 ### Bug Fixes
