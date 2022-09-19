@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.1](https://github.com/arfreelance/monorepo/compare/v0.27.0...v0.27.1) (2022-09-19)
+
+### Bug Fixes
+
+-   **package-lint:** require path ([f89d723](https://github.com/arfreelance/monorepo/commit/f89d72308f08c18efe61a7bdf1d0c3ab9fea9efb))
+
 # [0.27.0](https://github.com/arfreelance/monorepo/compare/v0.26.2...v0.27.0) (2022-09-19)
 
 ### Bug Fixes
