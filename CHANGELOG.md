@@ -3,16 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.30.0](https://github.com/arfreelance/monorepo/compare/v0.29.1...v0.30.0) (2022-09-20)
+## [0.30.1](https://github.com/arfreelance/monorepo/compare/v0.30.0...v0.30.1) (2022-09-20)
 
+### Bug Fixes
+
+-   **package-lint:** add missing deps ([a74ce7a](https://github.com/arfreelance/monorepo/commit/a74ce7aa0e2ac4ed8a8febe8e5c83dd71720d61b))
+
+# [0.30.0](https://github.com/arfreelance/monorepo/compare/v0.29.1...v0.30.0) (2022-09-20)
 
 ### Features
 
-* **package-lint:** add globby ([8d62a88](https://github.com/arfreelance/monorepo/commit/8d62a88464f21afcfb7a0a9eb5475f94fc725899))
-
-
-
-
+-   **package-lint:** add globby ([8d62a88](https://github.com/arfreelance/monorepo/commit/8d62a88464f21afcfb7a0a9eb5475f94fc725899))
 
 ## [0.29.1](https://github.com/arfreelance/monorepo/compare/v0.29.0...v0.29.1) (2022-09-20)
 
