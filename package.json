@@ -36,7 +36,7 @@
     "devDependencies": {
         "@arfreelance/eslint-config": "^0.30.0",
         "@arfreelance/eslint-plugin": "^0.30.0",
-        "@arfreelance/package-lint": "^0.30.0",
+        "@arfreelance/package-lint": "^0.30.1",
         "@arfreelance/stylelint-config": "^0.30.0",
         "@arfreelance/stylelint-plugin": "^0.30.0",
         "@commitlint/cli": "^17.0.3",
