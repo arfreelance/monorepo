@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/arfreelance/monorepo/compare/v0.30.1...v0.31.0) (2022-09-20)
+
+### Features
+
+-   **gulp:** convert some async functions to sync ([e441df5](https://github.com/arfreelance/monorepo/commit/e441df5127a7e6877f082fbf59b1874d2eebec09))
+-   **gulp:** export pages as build function ([249bbcc](https://github.com/arfreelance/monorepo/commit/249bbccf48c5de34c3bb1c728abb474253bde6f1))
+-   **gulp:** remove images minify and convert to webp if binary ([8c4f1ac](https://github.com/arfreelance/monorepo/commit/8c4f1aca4b15d4fb90d7173a42ed936f5d4637ce))
+-   update deps ([81359e9](https://github.com/arfreelance/monorepo/commit/81359e9b1220cdfbb787970d0747b4d25ee36c9a))
+
 ## [0.30.1](https://github.com/arfreelance/monorepo/compare/v0.30.0...v0.30.1) (2022-09-20)
 
 ### Bug Fixes

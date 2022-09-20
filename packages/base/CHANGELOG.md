@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/arfreelance/monorepo/compare/v0.30.1...v0.31.0) (2022-09-20)
+
+**Note:** Version bump only for package @arfreelance/base
+
 # [0.30.0](https://github.com/arfreelance/monorepo/compare/v0.29.1...v0.30.0) (2022-09-20)
 
 **Note:** Version bump only for package @arfreelance/base
