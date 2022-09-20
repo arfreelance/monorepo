@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/arfreelance/monorepo/compare/v0.28.1...v0.29.0) (2022-09-20)
+
+### Features
+
+-   **package-lint:** add gitignore support ([79667fc](https://github.com/arfreelance/monorepo/commit/79667fcf37a0a6768fe950d787265ee48f9121b1))
+
 ## [0.28.1](https://github.com/arfreelance/monorepo/compare/v0.28.0...v0.28.1) (2022-09-19)
 
 **Note:** Version bump only for package @arfreelance/monorepo

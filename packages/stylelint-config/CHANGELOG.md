@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/arfreelance/monorepo/compare/v0.28.1...v0.29.0) (2022-09-20)
+
+**Note:** Version bump only for package @arfreelance/stylelint-config
+
 # [0.28.0](https://github.com/arfreelance/monorepo/compare/v0.27.1...v0.28.0) (2022-09-19)
 
 **Note:** Version bump only for package @arfreelance/stylelint-config
