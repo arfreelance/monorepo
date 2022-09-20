@@ -35,7 +35,7 @@ const options = {
 // Test
 // -----------------------------------------------------------------------------
 
-module.exports.test = async (source) => {
+module.exports.test = (source) => {
     return src(source, { base: "./" })
         .pipe(gulpEslint.fix())
         .pipe(gulpEslint.format())
@@ -57,7 +57,7 @@ module.exports.build = async (source, target, format = "iife") => {
 // Minify
 // -----------------------------------------------------------------------------
 
-module.exports.minify = async (source, target) => {
+module.exports.minify = (source, target) => {
     return src(source)
         .pipe(gulpTerser(terserOptions))
         .pipe(gulpRename(options.rename))
