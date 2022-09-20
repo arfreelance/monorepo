@@ -34,11 +34,11 @@
         }
     },
     "devDependencies": {
-        "@arfreelance/eslint-config": "^0.29.1",
-        "@arfreelance/eslint-plugin": "^0.29.1",
-        "@arfreelance/package-lint": "^0.29.1",
-        "@arfreelance/stylelint-config": "^0.29.1",
-        "@arfreelance/stylelint-plugin": "^0.29.1",
+        "@arfreelance/eslint-config": "^0.30.0",
+        "@arfreelance/eslint-plugin": "^0.30.0",
+        "@arfreelance/package-lint": "^0.30.0",
+        "@arfreelance/stylelint-config": "^0.30.0",
+        "@arfreelance/stylelint-plugin": "^0.30.0",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "commitizen": "^4.2.5",
