@@ -1,6 +1,8 @@
 {
-    "packages": ["packages/*"],
-    "version": "0.29.1",
+    "packages": [
+        "packages/*"
+    ],
+    "version": "0.30.0",
     "useNx": false,
     "command": {
         "bootstrap": {
