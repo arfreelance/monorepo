@@ -13,7 +13,7 @@
     "license": "ISC",
     "author": {
         "name": "Argentina Freelance",
-        "email": "support@argentinafreelance.com"
+        "email": "soporte@argentinafreelance.com"
     },
     "main": "lib/index.js",
     "dependencies": {
