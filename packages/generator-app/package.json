@@ -12,8 +12,8 @@
     },
     "license": "ISC",
     "author": {
-        "name": "Lucas Banegas",
-        "email": "lucas@argentinafreelance.com"
+        "name": "Argentina Freelance",
+        "email": "author@argentinafreelance.com"
     },
     "type": "module",
     "main": "generators/app/index.js",

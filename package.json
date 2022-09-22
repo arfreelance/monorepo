@@ -13,8 +13,8 @@
     },
     "license": "ISC",
     "author": {
-        "name": "Lucas Banegas",
-        "email": "lucas@argentinafreelance.com"
+        "name": "Argentina Freelance",
+        "email": "author@argentinafreelance.com"
     },
     "scripts": {
         "prepare": "husky install",
