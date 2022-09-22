@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/arfreelance/monorepo/compare/v0.31.0...v0.31.1) (2022-09-22)
+
+### Bug Fixes
+
+-   **gulp:** disable corrupt purgecss-from-js ([44ff716](https://github.com/arfreelance/monorepo/commit/44ff716523e78467a03f0cee6f45b85761a15991))
+
 # [0.31.0](https://github.com/arfreelance/monorepo/compare/v0.30.1...v0.31.0) (2022-09-20)
 
 ### Features
