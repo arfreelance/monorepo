@@ -13,7 +13,7 @@
     "license": "ISC",
     "author": {
         "name": "Argentina Freelance",
-        "email": "admin@argentinafreelance.com"
+        "email": "support@argentinafreelance.com"
     },
     "type": "module",
     "main": "generators/app/index.js",
