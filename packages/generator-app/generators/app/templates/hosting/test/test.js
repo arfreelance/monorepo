@@ -13,4 +13,10 @@ describe("firebase", function () {
             assert.throws(app.getAnalyticsInitializer(true));
         });
     });
+
+    describe("#getSupportedAnalytics()", function () {
+        it("should return undefined", async function () {
+            assert.equal(await app.getSupportedAnalytics(), undefined);
+        });
+    });
 });
