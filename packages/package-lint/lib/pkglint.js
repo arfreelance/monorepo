@@ -11,8 +11,6 @@ const sort = require("sort-package-json");
 // -----------------------------------------------------------------------------
 
 module.exports = () => {
-    const removes = ["_id", "readme"];
-
     return through.obj(async (file, encoding, callback) => {
         if (file.isNull()) {
             return callback(null, file);
@@ -39,7 +37,7 @@ module.exports = () => {
             return callback(error);
         }
 
-        removes.forEach((field) => {
+        ["_id", "gitHead", "readme"].forEach((field) => {
             if (field in data) {
                 delete data[field];
             }
