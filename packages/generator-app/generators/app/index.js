@@ -177,7 +177,7 @@ export default class extends Generator {
 
     async install() {
         const remote = this.config.getPath("project.repository.git");
-        const message = '--message="chore: initial commit"';
+        const message = "--message=chore: initial commit";
 
         this.log();
         await this.spawnCommand("git", ["init"]);
