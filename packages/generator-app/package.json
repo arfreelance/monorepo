@@ -21,10 +21,11 @@
         "generators"
     ],
     "dependencies": {
+        "chalk": "^5.0.1",
+        "pacote": "^13.6.2",
         "yeoman-generator": "^5.7.0"
     },
     "publishConfig": {
         "access": "public"
-    },
-    "gitHead": "8663b6ec989016f0b5255fd10489db3e73003121"
+    }
 }

@@ -1,0 +1,7 @@
+# eslintignore
+
+**/bower_components/**
+**/node_modules/**
+**/public/**
+**/vendor/**
+**/*.min.*

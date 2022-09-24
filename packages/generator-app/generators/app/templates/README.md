@@ -1,0 +1,3 @@
+# <%- packageJson.name %>
+
+> <%- packageJson.description %>

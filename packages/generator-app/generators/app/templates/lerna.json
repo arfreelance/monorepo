@@ -1,0 +1,23 @@
+{
+    "packages": ["packages/*"],
+    "version": "0.0.0",
+    "useNx": false,
+    "command": {
+        "bootstrap": {
+            "hoist": true,
+            "nohoist": ["@arfreelance/base"]
+        },
+        "create": {
+            "private": true,
+            "access": "restricted",
+            "description": "Package in experimental stage. Do not use for production.",
+            "license": "CC-BY-NC-ND-4.0"
+        },
+        "version": {
+            "allowBranch": "main",
+            "changelogPreset": "angular",
+            "conventionalCommits": true,
+            "message": "chore(release): publish %v"
+        }
+    }
+}

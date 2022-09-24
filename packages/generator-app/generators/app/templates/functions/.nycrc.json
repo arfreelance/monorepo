@@ -1,0 +1,5 @@
+{
+    "reporter": ["text", "html"],
+    "report-dir": "../../.project/functions/coverage",
+    "temp-dir": "../../.project/functions/.nyc_output"
+}

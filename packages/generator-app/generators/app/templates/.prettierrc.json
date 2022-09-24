@@ -1,0 +1,21 @@
+{
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "useTabs": false,
+    "overrides": [
+        {
+            "files": "*.scss",
+            "options": { "printWidth": 120 }
+        },
+        {
+            "files": ".firebaserc",
+            "options": { "parser": "json" }
+        },
+        {
+            "files": "test/**/*.js",
+            "options": { "printWidth": 120 }
+        }
+    ]
+}
