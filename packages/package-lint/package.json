@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/package-lint",
-    "version": "0.31.1",
+    "version": "0.32.0",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo/tree/main/packages/package-lint#readme",
     "bugs": {

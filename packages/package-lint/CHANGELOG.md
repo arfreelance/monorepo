@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/arfreelance/monorepo/compare/v0.31.1...v0.32.0) (2022-09-24)
+
+### Features
+
+-   **package-lint:** remove gitHead property ([61f064b](https://github.com/arfreelance/monorepo/commit/61f064b49735cffaed7798470f2d382771ec2d42))
+
 ## [0.31.1](https://github.com/arfreelance/monorepo/compare/v0.31.0...v0.31.1) (2022-09-22)
 
 **Note:** Version bump only for package @arfreelance/package-lint

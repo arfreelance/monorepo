@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/arfreelance/monorepo/compare/v0.31.1...v0.32.0) (2022-09-24)
+
+### Features
+
+-   **generator-app:** initial commit ([82b8f78](https://github.com/arfreelance/monorepo/commit/82b8f784d91b135272e257c1f6101f65696c01fd))
+
 ## [0.31.1](https://github.com/arfreelance/monorepo/compare/v0.31.0...v0.31.1) (2022-09-22)
 
 **Note:** Version bump only for package @arfreelance/generator-app
