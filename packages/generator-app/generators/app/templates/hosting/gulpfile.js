@@ -21,18 +21,9 @@ task("clean:end", async () => {
 // -----------------------------------------------------------------------------
 
 task("images", () => {
-    const src = "sources/images/**/*.{gif,jpg,jpeg,png,svg}";
-    const dest = "tmp/assets/images";
+    const src = "sources/img/**/*.{gif,jpg,jpeg,png,svg}";
+    const dest = "tmp/assets/img";
     return images.build(src, dest);
-});
-
-// Miscs task(s)
-// -----------------------------------------------------------------------------
-
-task("miscs", () => {
-    const src = "sources/miscs/**/*";
-    const dest = "tmp/public";
-    return copy(src, dest, true);
 });
 
 // Pages task(s)
@@ -44,23 +35,32 @@ task("pages", () => {
     return pages.build(src, dest);
 });
 
+// Root task(s)
+// -----------------------------------------------------------------------------
+
+task("root", () => {
+    const src = "sources/root/**/*";
+    const dest = "tmp/public";
+    return copy(src, dest, true);
+});
+
 // Scripts task(s)
 // -----------------------------------------------------------------------------
 
 task("scripts:test", () => {
-    const src = "sources/scripts/**/*.js";
+    const src = "sources/js/**/*.js";
     return scripts.test(src);
 });
 
 task("scripts:build", async () => {
-    const src = "sources/scripts/main.js";
-    const dest = "tmp/assets/scripts";
-    return await scripts.build(src, dest, "esm");
+    const src = "sources/js/main.js";
+    const dest = "tmp/assets/js";
+    return await scripts.build(src, dest, "bundle");
 });
 
 task("scripts:minify", () => {
-    const src = "tmp/assets/scripts/**/*.js";
-    const dest = "tmp/assets/scripts";
+    const src = "tmp/assets/js/**/*.js";
+    const dest = "tmp/assets/js";
     return scripts.minify(src, dest);
 });
 
@@ -70,21 +70,20 @@ task("scripts", series("scripts:test", "scripts:build", "scripts:minify"));
 // -----------------------------------------------------------------------------
 
 task("styles:test", () => {
-    const src = "sources/styles/**/*.scss";
+    const src = "sources/scss/**/*.scss";
     return styles.test(src);
 });
 
 task("styles:build", () => {
-    const src = "sources/styles/main.scss";
-    const dest = "tmp/assets/styles";
+    const src = "sources/scss/**/*.scss";
+    const dest = "tmp/assets/css";
     return styles.build(src, dest);
 });
 
 task("styles:minify", () => {
-    const src = "tmp/assets/styles/**/*.css";
-    const dest = "tmp/assets/styles";
-    const opts = { content: ["sources/**/*.{js,pug}"] };
-    return styles.minify(src, dest, opts);
+    const src = "tmp/assets/css/**/*.css";
+    const dest = "tmp/assets/css";
+    return styles.minify(src, dest);
 });
 
 task("styles", series("styles:test", "styles:build", "styles:minify"));
