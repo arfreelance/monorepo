@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.34.1](https://github.com/arfreelance/monorepo/compare/v0.34.0...v0.34.1) (2022-10-02)
+
+### Bug Fixes
+
+-   failed publish ([4062a58](https://github.com/arfreelance/monorepo/commit/4062a582a80dff5c1f2ad49903f854113872267f))
+
 # [0.34.0](https://github.com/arfreelance/monorepo/compare/v0.33.0...v0.34.0) (2022-10-02)
 
 **Note:** Version bump only for package @arfreelance/eslint-plugin
