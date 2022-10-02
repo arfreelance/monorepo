@@ -47,9 +47,9 @@ module.exports.test = (source) => {
 // Build
 // -----------------------------------------------------------------------------
 
-module.exports.build = async (source, target, format = "iife") => {
+module.exports.build = async (source, target, name) => {
     const input = { input: source, plugins: options.rollup.plugins };
-    const output = { dir: target, sourcemap: false, format };
+    const output = { dir: target, sourcemap: false, format: "iife", name };
     const bundle = await rollup(input);
     return bundle.write(output);
 };
