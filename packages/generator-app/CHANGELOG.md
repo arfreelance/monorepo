@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/arfreelance/monorepo/compare/v0.34.1...v0.35.0) (2022-10-02)
+
+### Features
+
+-   **generator-app:** improve hosting templates ([9f12237](https://github.com/arfreelance/monorepo/commit/9f12237316ee43b07912f0ffb48843d625101872))
+
 ## [0.34.1](https://github.com/arfreelance/monorepo/compare/v0.34.0...v0.34.1) (2022-10-02)
 
 ### Bug Fixes

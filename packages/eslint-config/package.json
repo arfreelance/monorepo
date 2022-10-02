@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/eslint-config",
-    "version": "0.34.1",
+    "version": "0.35.0",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo/tree/main/packages/eslint-config#readme",
     "bugs": {
@@ -17,7 +17,7 @@
     },
     "main": "lib/index.js",
     "dependencies": {
-        "@arfreelance/eslint-plugin": "^0.34.1",
+        "@arfreelance/eslint-plugin": "^0.35.0",
         "@babel/core": "^7.18.6",
         "@babel/eslint-parser": "^7.18.2",
         "eslint-config-prettier": "^8.5.0",
