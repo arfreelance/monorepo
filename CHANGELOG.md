@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/arfreelance/monorepo/compare/v0.32.0...v0.33.0) (2022-10-02)
+
+### Features
+
+-   **generator-app:** add getSupportedAnalytics function test ([45fe835](https://github.com/arfreelance/monorepo/commit/45fe83563700fa0e4394ae5d5c2af2c32902411d))
+-   **generator-app:** remove quotes on git commit message ([2ca65ab](https://github.com/arfreelance/monorepo/commit/2ca65ab499359c1914c05941c038cc2035c017b8))
+-   **gulp:** remove format and add name to rollup task ([2773953](https://github.com/arfreelance/monorepo/commit/27739531c3043c9a0b9b21a393bf149f1f60be78))
+
 # [0.32.0](https://github.com/arfreelance/monorepo/compare/v0.31.1...v0.32.0) (2022-09-24)
 
 ### Features
