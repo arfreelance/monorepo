@@ -142,21 +142,22 @@ export class Hosting extends Package {
         };
 
         this.filesToCopy = {
-            "hosting/sources/images/empty": "sources/images/empty",
-            "hosting/sources/miscs/empty": "sources/miscs/empty",
-            "hosting/sources/pages/404.pug": "sources/pages/404.pug",
-            "hosting/sources/pages/index.pug": "sources/pages/index.pug",
-            "hosting/sources/scripts/firebase/analytics.js":
-                "sources/scripts/firebase/analytics.js",
-            "hosting/sources/scripts/firebase/app.js":
-                "sources/scripts/firebase/app.js",
-            "hosting/sources/scripts/firebase/auth.js":
-                "sources/scripts/firebase/auth.js",
-            "hosting/sources/scripts/firebase/firestore.js":
-                "sources/scripts/firebase/firestore.js",
-            "hosting/sources/scripts/main.js": "sources/scripts/main.js",
-            "hosting/sources/styles/main.scss": "sources/styles/main.scss",
-            "hosting/sources/template/main.pug": "sources/template/main.pug",
+            "hosting/sources/img/empty": "sources/img/empty",
+            "hosting/sources/root/empty": "sources/root/empty",
+            "hosting/sources/pug/pages/404.pug": "sources/pug/pages/404.pug",
+            "hosting/sources/pug/pages/index.pug":
+                "sources/pug/pages/index.pug",
+            "hosting/sources/js/firebase/analytics.js":
+                "sources/js/firebase/analytics.js",
+            "hosting/sources/js/firebase/app.js": "sources/js/firebase/app.js",
+            "hosting/sources/js/firebase/auth.js":
+                "sources/js/firebase/auth.js",
+            "hosting/sources/js/firebase/firestore.js":
+                "sources/js/firebase/firestore.js",
+            "hosting/sources/js/main.js": "sources/js/main.js",
+            "hosting/sources/scss/main.scss": "sources/scss/main.scss",
+            "hosting/sources/pug/template/main.pug":
+                "sources/pug/template/main.pug",
             "hosting/test/test.js": "test/test.js",
             "hosting/.nycrc.json": ".nycrc.json",
             "hosting/gulpfile.js": "gulpfile.js",
