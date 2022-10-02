@@ -131,7 +131,7 @@ export class Hosting extends Package {
                 mocha: "npx mocha --color --reporter spec",
                 test: "npm run lint && npm run coverage",
             },
-            dependencies: ["@arfreelance/base", "firebase"],
+            dependencies: ["firebase"],
             devDependencies: [
                 "@arfreelance/gulp",
                 "@arfreelance/package-lint",
