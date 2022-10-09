@@ -99,13 +99,8 @@ export class Functions extends Package {
                 mocha: "npx mocha --color --reporter spec",
                 test: "npm run lint && npm run coverage",
             },
-            dependencies: ["firebase-admin", "firebase-functions"],
-            devDependencies: [
-                "@arfreelance/package-lint",
-                "c8",
-                "firebase-functions-test",
-                "mocha",
-            ],
+            dependencies: ["cors", "express", "firebase-admin", "firebase-functions", "query-types"],
+            devDependencies: ["@arfreelance/package-lint", "c8", "firebase-functions-test", "mocha"],
         };
 
         this.filesToCopy = {
@@ -132,32 +127,21 @@ export class Hosting extends Package {
                 test: "npm run lint && npm run coverage",
             },
             dependencies: ["firebase"],
-            devDependencies: [
-                "@arfreelance/gulp",
-                "@arfreelance/package-lint",
-                "c8",
-                "gulp",
-                "mocha",
-            ],
+            devDependencies: ["@arfreelance/gulp", "@arfreelance/package-lint", "c8", "gulp", "mocha"],
         };
 
         this.filesToCopy = {
             "hosting/sources/img/empty": "sources/img/empty",
             "hosting/sources/root/empty": "sources/root/empty",
             "hosting/sources/pug/pages/404.pug": "sources/pug/pages/404.pug",
-            "hosting/sources/pug/pages/index.pug":
-                "sources/pug/pages/index.pug",
-            "hosting/sources/js/firebase/analytics.js":
-                "sources/js/firebase/analytics.js",
+            "hosting/sources/pug/pages/index.pug": "sources/pug/pages/index.pug",
+            "hosting/sources/js/firebase/analytics.js": "sources/js/firebase/analytics.js",
             "hosting/sources/js/firebase/app.js": "sources/js/firebase/app.js",
-            "hosting/sources/js/firebase/auth.js":
-                "sources/js/firebase/auth.js",
-            "hosting/sources/js/firebase/firestore.js":
-                "sources/js/firebase/firestore.js",
+            "hosting/sources/js/firebase/auth.js": "sources/js/firebase/auth.js",
+            "hosting/sources/js/firebase/firestore.js": "sources/js/firebase/firestore.js",
             "hosting/sources/js/main.js": "sources/js/main.js",
             "hosting/sources/scss/main.scss": "sources/scss/main.scss",
-            "hosting/sources/pug/template/main.pug":
-                "sources/pug/template/main.pug",
+            "hosting/sources/pug/template/main.pug": "sources/pug/template/main.pug",
             "hosting/test/test.js": "test/test.js",
             "hosting/.nycrc.json": ".nycrc.json",
             "hosting/gulpfile.js": "gulpfile.js",
