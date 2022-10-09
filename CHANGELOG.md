@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/arfreelance/monorepo/compare/v0.35.0...v0.36.0) (2022-10-09)
+
+### Bug Fixes
+
+-   **generator-app:** change incorrect templates path ([a4a0c54](https://github.com/arfreelance/monorepo/commit/a4a0c5480e7a0bca10cf9e7bb3e21556dd4cbec6))
+
+### Features
+
+-   **generator-app:** add functions deps ([61c7259](https://github.com/arfreelance/monorepo/commit/61c7259262d35e099c7ce2b8c6704dd8d8f17176))
+
 # [0.35.0](https://github.com/arfreelance/monorepo/compare/v0.34.1...v0.35.0) (2022-10-02)
 
 ### Features
