@@ -1,13 +1,7 @@
 {
     "endOfLine": "lf",
-    "printWidth": 80,
+    "printWidth": 120,
     "singleQuote": false,
     "tabWidth": 4,
-    "useTabs": false,
-    "overrides": [
-        {
-            "files": "*.scss",
-            "options": { "printWidth": 120 }
-        }
-    ]
+    "useTabs": false
 }

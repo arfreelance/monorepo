@@ -35,9 +35,7 @@ const { firstChildByTag, hasAttribute } = AmpOptimizerClass.NodeUtils;
 const minifyNode = async (node, options) => {
     if (
         !options.isAmp ||
-        ("attribs" in node.parent &&
-            ("amp-custom" in node.parent.attribs ||
-                "amp-keyframes" in node.parent.attribs))
+        ("attribs" in node.parent && ("amp-custom" in node.parent.attribs || "amp-keyframes" in node.parent.attribs))
     ) {
         const purgecss = new PurgeCSS();
         const purgecssResult = await purgecss.purge(options.purge);
@@ -75,9 +73,7 @@ const processNode = async (node, options) => {
     if (node.children && Array.isArray(node.children) && node.children.length) {
         node.children = await Promise.all(
             node.children.map(async (subnode) => {
-                return node.type === "style"
-                    ? await minifyNode(subnode, options)
-                    : await processNode(subnode, options);
+                return node.type === "style" ? await minifyNode(subnode, options) : await processNode(subnode, options);
             })
         );
 
@@ -115,9 +111,7 @@ module.exports = (purgeOpts) => {
 
         purgeOpts = purgeOpts || {};
 
-        const isAmp =
-            (await hasAttribute(htmlObj, "⚡")) ||
-            (await hasAttribute(htmlObj, "amp"));
+        const isAmp = (await hasAttribute(htmlObj, "⚡")) || (await hasAttribute(htmlObj, "amp"));
 
         const extension = file.path.split(".").pop();
 

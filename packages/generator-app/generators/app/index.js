@@ -111,17 +111,13 @@ export default class extends Generator {
                 // Add dependencies
 
                 if (Array.isArray(packageJson.dependencies)) {
-                    packageJson.dependencies = await resolver(
-                        packageJson.dependencies
-                    );
+                    packageJson.dependencies = await resolver(packageJson.dependencies);
                 }
 
                 // Add devDependencies
 
                 if (Array.isArray(packageJson.devDependencies)) {
-                    packageJson.devDependencies = await resolver(
-                        packageJson.devDependencies
-                    );
+                    packageJson.devDependencies = await resolver(packageJson.devDependencies);
                 }
 
                 // Create "package.json"
@@ -133,15 +129,9 @@ export default class extends Generator {
                 // Copy package files
 
                 for (const sourcePath in filesToCopy) {
-                    const target =
-                        filesToCopy[sourcePath] === true
-                            ? sourcePath
-                            : filesToCopy[sourcePath];
+                    const target = filesToCopy[sourcePath] === true ? sourcePath : filesToCopy[sourcePath];
 
-                    await this.copyTemplateAsync(
-                        resolve(this.sourceRoot(), sourcePath),
-                        resolve(folder, target)
-                    );
+                    await this.copyTemplateAsync(resolve(this.sourceRoot(), sourcePath), resolve(folder, target));
                 }
 
                 // Render package files
@@ -152,10 +142,7 @@ export default class extends Generator {
                 };
 
                 for (const sourcePath in filesToRender) {
-                    const target =
-                        filesToRender[sourcePath] === true
-                            ? sourcePath
-                            : filesToRender[sourcePath];
+                    const target = filesToRender[sourcePath] === true ? sourcePath : filesToRender[sourcePath];
 
                     await this.renderTemplateAsync(
                         resolve(this.sourceRoot(), sourcePath),

@@ -14,12 +14,7 @@ const plugins = {
 // Rules
 // -----------------------------------------------------------------------------
 
-const rules = _.assign(
-    {},
-    plugins.import.rules,
-    plugins.node.rules,
-    plugins.promise.rules
-);
+const rules = _.assign({}, plugins.import.rules, plugins.node.rules, plugins.promise.rules);
 
 // Exports
 // -----------------------------------------------------------------------------

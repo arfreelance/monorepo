@@ -162,10 +162,7 @@ module.exports = () => {
             }
 
             css.walkAtRules("media", (atRule) => {
-                if (
-                    atRule.parent.parent &&
-                    atRule.parent.parent.type !== "root"
-                ) {
+                if (atRule.parent.parent && atRule.parent.parent.type !== "root") {
                     return;
                 }
 

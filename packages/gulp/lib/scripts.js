@@ -58,8 +58,5 @@ module.exports.build = async (source, target, name) => {
 // -----------------------------------------------------------------------------
 
 module.exports.minify = (source, target) => {
-    return src(source)
-        .pipe(gulpTerser(terserOptions))
-        .pipe(gulpRename(options.rename))
-        .pipe(dest(target));
+    return src(source).pipe(gulpTerser(terserOptions)).pipe(gulpRename(options.rename)).pipe(dest(target));
 };

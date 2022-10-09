@@ -47,11 +47,7 @@ const options = {
             },
         },
     },
-    postcss: [
-        require("./plugins/mqpacker"),
-        require("cssnano")(cssnano),
-        require("autoprefixer")(autoprefixer),
-    ],
+    postcss: [require("./plugins/mqpacker"), require("cssnano")(cssnano), require("autoprefixer")(autoprefixer)],
     rename: {
         suffix: ".min",
     },
@@ -72,10 +68,7 @@ const options = {
 // -----------------------------------------------------------------------------
 
 module.exports.test = (source) => {
-    return src(source, { base: "./" })
-        .pipe(prettier())
-        .pipe(stylelint(options.stylelint))
-        .pipe(dest("./"));
+    return src(source, { base: "./" }).pipe(prettier()).pipe(stylelint(options.stylelint)).pipe(dest("./"));
 };
 
 // Build

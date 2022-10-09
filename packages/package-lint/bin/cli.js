@@ -12,10 +12,7 @@ const program = new Command();
 // Program data
 // -----------------------------------------------------------------------------
 
-program
-    .name("package-lint")
-    .description("Lint and fix package.json files")
-    .version(pkg.version);
+program.name("package-lint").description("Lint and fix package.json files").version(pkg.version);
 
 // Program process
 // -----------------------------------------------------------------------------

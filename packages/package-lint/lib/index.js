@@ -38,13 +38,7 @@ const options = {
     globby: {
         absolute: true,
         gitignore: true,
-        ignore: [
-            "**/bower_components/**",
-            "**/node_modules/**",
-            "**/public/**",
-            "**/vendor/**",
-            "**/*.min.*",
-        ],
+        ignore: ["**/bower_components/**", "**/node_modules/**", "**/public/**", "**/vendor/**", "**/*.min.*"],
     },
     src: {
         allowEmpty: true,
