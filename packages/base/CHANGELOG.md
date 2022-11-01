@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.1](https://github.com/arfreelance/monorepo/compare/v0.36.0...v0.36.1) (2022-11-01)
+
+### Bug Fixes
+
+-   **base:** add main property ([cbd5847](https://github.com/arfreelance/monorepo/commit/cbd58471c8e3f0fd0b65e5f7d6d1dd602215ab10))
+
 # [0.36.0](https://github.com/arfreelance/monorepo/compare/v0.35.0...v0.36.0) (2022-10-09)
 
 **Note:** Version bump only for package @arfreelance/base

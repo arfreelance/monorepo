@@ -1,6 +1,6 @@
 {
     "name": "@arfreelance/base",
-    "version": "0.36.0",
+    "version": "0.36.1",
     "description": "Package in experimental stage. Do not use for production.",
     "homepage": "https://github.com/arfreelance/monorepo/tree/main/packages/base#readme",
     "bugs": {
